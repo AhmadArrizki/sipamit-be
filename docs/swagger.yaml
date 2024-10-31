@@ -1,0 +1,2047 @@
+basePath: /
+definitions:
+  doc.CPDetail:
+    properties:
+      keterangan:
+        type: string
+      name:
+        type: string
+      ok:
+        type: boolean
+    type: object
+  doc.DeviceDocForm:
+    properties:
+      checkpoint:
+        items:
+          $ref: '#/definitions/doc.CPDetail'
+        type: array
+      device_id:
+        type: string
+    type: object
+  doc.UpdateDeviceDocForm:
+    properties:
+      checkpoint:
+        items:
+          $ref: '#/definitions/doc.CPDetail'
+        type: array
+    type: object
+  handler.cctvForm:
+    properties:
+      kode:
+        type: string
+      lokasi:
+        type: string
+      nama:
+        type: string
+    type: object
+  handler.fingerPrintForm:
+    properties:
+      kode:
+        type: string
+      lokasi:
+        type: string
+      nama:
+        type: string
+    type: object
+  handler.komputerPH1Form:
+    properties:
+      cpu:
+        type: string
+      internal:
+        type: string
+      lokasi:
+        type: string
+      merk:
+        type: string
+      monitor:
+        type: string
+      nama:
+        type: string
+      pc:
+        type: string
+      ram:
+        type: string
+    type: object
+  handler.komputerPH2Form:
+    properties:
+      cpu:
+        type: string
+      internal:
+        type: string
+      lokasi:
+        type: string
+      merk:
+        type: string
+      monitor:
+        type: string
+      nama:
+        type: string
+      pc:
+        type: string
+      ram:
+        type: string
+    type: object
+  handler.loginForm:
+    properties:
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+  handler.printerForm:
+    properties:
+      departemen:
+        type: string
+      nama:
+        type: string
+      no_seri:
+        type: string
+      tipe_printer:
+        type: string
+    type: object
+  handler.teleponForm:
+    properties:
+      departemen:
+        type: string
+      ext:
+        type: string
+      lokasi:
+        type: string
+      merk:
+        type: string
+      tipe:
+        type: string
+      user:
+        type: string
+    type: object
+  handler.toaForm:
+    properties:
+      kode:
+        type: string
+      lokasi:
+        type: string
+      nama:
+        type: string
+      posisi:
+        type: string
+    type: object
+  handler.updateCheckpointForm:
+    properties:
+      checkpoint:
+        items:
+          type: string
+        type: array
+    type: object
+  handler.upsForm:
+    properties:
+      departemen:
+        type: string
+      lokasi:
+        type: string
+      nama:
+        type: string
+      no_seri:
+        type: string
+      tipe:
+        type: string
+    type: object
+  handler.userForm:
+    properties:
+      full_name:
+        type: string
+      password:
+        type: string
+      username:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Sistem Pencatatan Maintenance IT Backend API
+  title: Sistem Pencatatan Maintenance IT Backend
+paths:
+  /api/cctv:
+    post:
+      operationId: create-cctv
+      parameters:
+      - description: CCTV Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.cctvForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create cctv
+      tags:
+      - Device CCTV
+  /api/cctv/{id}:
+    delete:
+      operationId: delete-cctv-by-id
+      parameters:
+      - description: CCTV ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete cctv by id
+      tags:
+      - Device CCTV
+    get:
+      operationId: get-cctv-by-id
+      parameters:
+      - description: CCTV ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get cctv by id
+      tags:
+      - Device CCTV
+    put:
+      operationId: update-cctv-by-id
+      parameters:
+      - description: CCTV ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: CCTV Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.cctvForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update cctv by id
+      tags:
+      - Device CCTV
+  /api/cctvs:
+    get:
+      operationId: get-all-cctvs
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all cctvs
+      tags:
+      - Device CCTV
+  /api/checkpoint/cctv:
+    get:
+      operationId: get-cctv-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get cctv checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-cctv-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update cctv checkpoint
+      tags:
+      - Checkpoint
+  /api/checkpoint/fingerprint:
+    get:
+      operationId: get-fingerprint-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get fingerprint checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-fingerprint-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update fingerprint checkpoint
+      tags:
+      - Checkpoint
+  /api/checkpoint/komputer-ph1:
+    get:
+      operationId: get-komputer-ph1-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get komputer-ph1 checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-komputer-ph1-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update komputer-ph1 checkpoint
+      tags:
+      - Checkpoint
+  /api/checkpoint/komputer-ph2:
+    get:
+      operationId: get-komputer-ph2-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get komputer-ph2 checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-komputer-ph2-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update komputer-ph2 checkpoint
+      tags:
+      - Checkpoint
+  /api/checkpoint/printer:
+    get:
+      operationId: get-printer-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get printer checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-printer-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update printer checkpoint
+      tags:
+      - Checkpoint
+  /api/checkpoint/telepon:
+    get:
+      operationId: get-telepon-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get telepon checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-telepon-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update telepon checkpoint
+      tags:
+      - Checkpoint
+  /api/checkpoint/toa:
+    get:
+      operationId: get-toa-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get toa checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-toa-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update toa checkpoint
+      tags:
+      - Checkpoint
+  /api/checkpoint/ups:
+    get:
+      operationId: get-ups-checkpoint
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get ups checkpoint
+      tags:
+      - Checkpoint
+    put:
+      consumes:
+      - application/json
+      operationId: update-ups-checkpoint
+      parameters:
+      - description: Checkpoint
+        in: body
+        name: checkpoint
+        required: true
+        schema:
+          $ref: '#/definitions/handler.updateCheckpointForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update ups checkpoint
+      tags:
+      - Checkpoint
+  /api/doc/cctv:
+    post:
+      operationId: create-cctv-document
+      parameters:
+      - description: CCTV Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create cctv document
+      tags:
+      - Doc CCTV
+  /api/doc/cctv/{id}:
+    delete:
+      operationId: delete-cctv-document-by-id
+      parameters:
+      - description: CCTV Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete cctv document by ID
+      tags:
+      - Doc CCTV
+    get:
+      operationId: get-cctv-document-by-id
+      parameters:
+      - description: CCTV Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get cctv document by ID
+      tags:
+      - Doc CCTV
+    put:
+      operationId: update-cctv-document-by-id
+      parameters:
+      - description: CCTV Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: CCTV Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update cctv document by ID
+      tags:
+      - Doc CCTV
+  /api/doc/cctvs:
+    get:
+      operationId: get-all-cctv-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all cctv documents
+      tags:
+      - Doc CCTV
+  /api/doc/fingerprint:
+    post:
+      operationId: create-fingerprint-document
+      parameters:
+      - description: Fingerprint Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create fingerprint document
+      tags:
+      - Doc Fingerprint
+  /api/doc/fingerprint/{id}:
+    delete:
+      operationId: delete-fingerprint-document-by-id
+      parameters:
+      - description: Fingerprint Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete fingerprint document by ID
+      tags:
+      - Doc Fingerprint
+    get:
+      operationId: get-fingerprint-document-by-id
+      parameters:
+      - description: Fingerprint Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get fingerprint document by ID
+      tags:
+      - Doc Fingerprint
+    put:
+      operationId: update-fingerprint-document-by-id
+      parameters:
+      - description: Fingerprint Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Fingerprint Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update fingerprint document by ID
+      tags:
+      - Doc Fingerprint
+  /api/doc/fingerprints:
+    get:
+      operationId: get-all-fingerprint-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all fingerprint documents
+      tags:
+      - Doc Fingerprint
+  /api/doc/komputer-ph1:
+    post:
+      operationId: create-new-komputer-ph1-document
+      parameters:
+      - description: Komputer PH1 Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new komputer ph1 document
+      tags:
+      - Doc Komputer PH1
+  /api/doc/komputer-ph1/{id}:
+    delete:
+      operationId: delete-komputer-ph1-document-by-id
+      parameters:
+      - description: Komputer PH1 Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete komputer ph1 document by ID
+      tags:
+      - Doc Komputer PH1
+    get:
+      operationId: get-komputer-ph1-document-by-id
+      parameters:
+      - description: Komputer PH1 Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get komputer ph1 document by ID
+      tags:
+      - Doc Komputer PH1
+    put:
+      operationId: update-komputer-ph1-document-by-id
+      parameters:
+      - description: Komputer PH1 Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Komputer PH1 Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update komputer ph1 document by ID
+      tags:
+      - Doc Komputer PH1
+  /api/doc/komputer-ph1s:
+    get:
+      operationId: get-all-komputer-ph1-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all komputer ph1 documents
+      tags:
+      - Doc Komputer PH1
+  /api/doc/komputer-ph2:
+    post:
+      operationId: create-new-komputer-ph2-document
+      parameters:
+      - description: Komputer PH2 Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new komputer ph2 document
+      tags:
+      - Doc Komputer PH2
+  /api/doc/komputer-ph2/{id}:
+    delete:
+      operationId: delete-komputer-ph2-document-by-id
+      parameters:
+      - description: Komputer PH2 Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete komputer ph2 document by ID
+      tags:
+      - Doc Komputer PH2
+    get:
+      operationId: get-komputer-ph2-document-by-id
+      parameters:
+      - description: Komputer PH2 Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get komputer ph2 document by ID
+      tags:
+      - Doc Komputer PH2
+    put:
+      operationId: update-komputer-ph2-document-by-id
+      parameters:
+      - description: Komputer PH2 Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Komputer PH2 Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update komputer ph2 document by ID
+      tags:
+      - Doc Komputer PH2
+  /api/doc/komputer-ph2s:
+    get:
+      operationId: get-all-komputer-ph2-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all komputer ph2 documents
+      tags:
+      - Doc Komputer PH2
+  /api/doc/printer:
+    post:
+      operationId: create-printer-document
+      parameters:
+      - description: Printer Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create printer document
+      tags:
+      - Doc Printer
+  /api/doc/printer/{id}:
+    delete:
+      operationId: delete-printer-document-by-id
+      parameters:
+      - description: Printer Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete printer document by ID
+      tags:
+      - Doc Printer
+    get:
+      operationId: get-printer-document-by-id
+      parameters:
+      - description: Printer Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get printer document by ID
+      tags:
+      - Doc Printer
+    put:
+      operationId: update-printer-document-by-id
+      parameters:
+      - description: Printer Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Printer Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update printer document by ID
+      tags:
+      - Doc Printer
+  /api/doc/printers:
+    get:
+      operationId: get-all-printer-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all printer documents
+      tags:
+      - Doc Printer
+  /api/doc/telepon:
+    post:
+      consumes:
+      - application/json
+      operationId: create-new-telepon-document
+      parameters:
+      - description: Telepon Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new telepon document
+      tags:
+      - Doc Telepon
+  /api/doc/telepon/{id}:
+    delete:
+      operationId: delete-telepon-document-by-id
+      parameters:
+      - description: Telepon Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete telepon document by ID
+      tags:
+      - Doc Telepon
+    get:
+      operationId: get-telepon-document-by-id
+      parameters:
+      - description: Telepon Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get telepon document by ID
+      tags:
+      - Doc Telepon
+    put:
+      operationId: update-telepon-document-by-id
+      parameters:
+      - description: Telepon Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Telepon Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update telepon document by ID
+      tags:
+      - Doc Telepon
+  /api/doc/telepons:
+    get:
+      operationId: get-all-telepons-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all telepons documents
+      tags:
+      - Doc Telepon
+  /api/doc/toa:
+    post:
+      operationId: create-toa-document
+      parameters:
+      - description: TOA Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create toa document
+      tags:
+      - Doc TOA
+  /api/doc/toa/{id}:
+    delete:
+      operationId: delete-toa-document-by-id
+      parameters:
+      - description: TOA Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete toa document by ID
+      tags:
+      - Doc TOA
+    get:
+      operationId: get-toa-document-by-id
+      parameters:
+      - description: TOA Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get toa document by ID
+      tags:
+      - Doc TOA
+    put:
+      operationId: update-toa-document-by-id
+      parameters:
+      - description: TOA Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: TOA Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update toa document by ID
+      tags:
+      - Doc TOA
+  /api/doc/toas:
+    get:
+      operationId: get-all-toas-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all toas documents
+      tags:
+      - Doc TOA
+  /api/doc/ups:
+    get:
+      operationId: get-all-ups-documents
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all ups documents
+      tags:
+      - Doc UPS
+    post:
+      operationId: create-new-ups-document
+      parameters:
+      - description: UPS Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new ups document
+      tags:
+      - Doc UPS
+  /api/doc/ups/{id}:
+    delete:
+      operationId: delete-ups-document-by-id
+      parameters:
+      - description: UPS Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete ups document by ID
+      tags:
+      - Doc UPS
+    get:
+      operationId: get-ups-document-by-id
+      parameters:
+      - description: UPS Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get ups document by ID
+      tags:
+      - Doc UPS
+    put:
+      operationId: update-ups-document-by-id
+      parameters:
+      - description: UPS Document ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: UPS Document Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.UpdateDeviceDocForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update ups document by ID
+      tags:
+      - Doc UPS
+  /api/fingerprint:
+    post:
+      operationId: create-fingerprint
+      parameters:
+      - description: Fingerprint Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.fingerPrintForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new fingerprint
+      tags:
+      - Device Fingerprint
+  /api/fingerprint/{id}:
+    delete:
+      operationId: delete-fingerprint-by-id
+      parameters:
+      - description: Fingerprint ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete fingerprint by id
+      tags:
+      - Device Fingerprint
+    get:
+      operationId: get-fingerprint-by-id
+      parameters:
+      - description: Fingerprint ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get fingerprint by id
+      tags:
+      - Device Fingerprint
+    put:
+      operationId: update-fingerprint-by-id
+      parameters:
+      - description: Fingerprint ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Fingerprint Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.fingerPrintForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update fingerprint by id
+      tags:
+      - Device Fingerprint
+  /api/fingerprints:
+    get:
+      operationId: get-all-fingerprints
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all fingerprints
+      tags:
+      - Device Fingerprint
+  /api/komputer-ph1:
+    post:
+      operationId: create-komputer-ph1
+      parameters:
+      - description: KomputerPH1 Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.komputerPH1Form'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new komputer-ph1
+      tags:
+      - Device KomputerPH1
+  /api/komputer-ph1/{id}:
+    delete:
+      operationId: delete-komputer-ph1-by-id
+      parameters:
+      - description: KomputerPH1 ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete komputer-ph1 by id
+      tags:
+      - Device KomputerPH1
+    get:
+      operationId: get-komputer-ph1-by-id
+      parameters:
+      - description: KomputerPH1 ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get komputer-ph1 by id
+      tags:
+      - Device KomputerPH1
+    put:
+      operationId: update-komputer-ph1-by-id
+      parameters:
+      - description: KomputerPH1 ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: KomputerPH1 Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.komputerPH1Form'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update komputer-ph1 by id
+      tags:
+      - Device KomputerPH1
+  /api/komputer-ph1s:
+    get:
+      operationId: get-all-komputer-ph1s
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all komputer-ph1s
+      tags:
+      - Device KomputerPH1
+  /api/komputer-ph2:
+    post:
+      operationId: create-komputer-ph2
+      parameters:
+      - description: KomputerPH2 Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.komputerPH2Form'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new komputer-ph2
+      tags:
+      - Device KomputerPH2
+  /api/komputer-ph2/{id}:
+    delete:
+      operationId: delete-komputer-ph2-by-id
+      parameters:
+      - description: KomputerPH2 ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete komputer-ph2 by id
+      tags:
+      - Device KomputerPH2
+    get:
+      operationId: get-komputer-ph2-by-id
+      parameters:
+      - description: KomputerPH2 ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get komputer-ph2 by id
+      tags:
+      - Device KomputerPH2
+    put:
+      operationId: update-komputer-ph2-by-id
+      parameters:
+      - description: KomputerPH2 ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: KomputerPH2 Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.komputerPH2Form'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update komputer-ph2 by id
+      tags:
+      - Device KomputerPH2
+  /api/komputer-ph2s:
+    get:
+      operationId: get-all-komputer-ph2s
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all komputer-ph2s
+      tags:
+      - Device KomputerPH2
+  /api/login:
+    post:
+      operationId: login
+      parameters:
+      - description: Login Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.loginForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Login
+      tags:
+      - Auth
+  /api/printer:
+    post:
+      operationId: create-new-printer
+      parameters:
+      - description: Printer Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.printerForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new printer
+      tags:
+      - Device Printer
+  /api/printer/{id}:
+    delete:
+      operationId: delete-printer-by-id
+      parameters:
+      - description: Printer ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete printer by id
+      tags:
+      - Device Printer
+    get:
+      operationId: get-printer-by-id
+      parameters:
+      - description: Printer ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get printer by id
+      tags:
+      - Device Printer
+    put:
+      operationId: update-printer-by-id
+      parameters:
+      - description: Printer ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Printer Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.printerForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update printer by id
+      tags:
+      - Device Printer
+  /api/printers:
+    get:
+      operationId: get-all-printers
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all printers
+      tags:
+      - Device Printer
+  /api/telepon:
+    post:
+      operationId: create-new-telepon
+      parameters:
+      - description: Telepon Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.teleponForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new telepon
+      tags:
+      - Device Telepon
+  /api/telepon/{id}:
+    delete:
+      operationId: delete-telepon-by-id
+      parameters:
+      - description: Telepon ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete telepon by id
+      tags:
+      - Device Telepon
+    get:
+      operationId: get-telepon-by-id
+      parameters:
+      - description: Telepon ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get telepon by id
+      tags:
+      - Device Telepon
+    put:
+      operationId: update-telepon-by-id
+      parameters:
+      - description: Telepon ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Telepon Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.teleponForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update telepon by id
+      tags:
+      - Device Telepon
+  /api/telepons:
+    get:
+      operationId: get-all-telepons
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all telepons
+      tags:
+      - Device Telepon
+  /api/toa:
+    post:
+      operationId: create-new-toa
+      parameters:
+      - description: TOA Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.toaForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new toa
+      tags:
+      - Device TOA
+  /api/toa/{id}:
+    delete:
+      operationId: delete-toa-by-id
+      parameters:
+      - description: TOA ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete toa by id
+      tags:
+      - Device TOA
+    get:
+      operationId: get-toa-by-id
+      parameters:
+      - description: TOA ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get toa by id
+      tags:
+      - Device TOA
+    put:
+      operationId: update-toa-by-id
+      parameters:
+      - description: TOA ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: TOA Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.toaForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update toa by id
+      tags:
+      - Device TOA
+  /api/toas:
+    get:
+      operationId: get-all-toas
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all toas
+      tags:
+      - Device TOA
+  /api/ups:
+    get:
+      operationId: get-all-ups
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all ups
+      tags:
+      - Device UPS
+    post:
+      operationId: create-new-ups
+      parameters:
+      - description: UPS Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.upsForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Create new ups
+      tags:
+      - Device UPS
+  /api/ups/{id}:
+    delete:
+      operationId: delete-ups-by-id
+      parameters:
+      - description: UPS ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete ups by id
+      tags:
+      - Device UPS
+    get:
+      operationId: get-ups-by-id
+      parameters:
+      - description: UPS ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get ups by id
+      tags:
+      - Device UPS
+    put:
+      operationId: update-ups-by-id
+      parameters:
+      - description: UPS ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: UPS Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.upsForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update ups by id
+      tags:
+      - Device UPS
+  /api/user:
+    post:
+      operationId: user-create
+      parameters:
+      - description: User Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.userForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Add new admin user
+      tags:
+      - User
+  /api/user/{username}:
+    delete:
+      operationId: user-delete
+      parameters:
+      - description: username
+        in: path
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete user
+      tags:
+      - User
+    get:
+      operationId: user-detail
+      parameters:
+      - description: username
+        in: path
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get user detail
+      tags:
+      - User
+    put:
+      operationId: user-edit
+      parameters:
+      - description: username
+        in: path
+        name: username
+        required: true
+        type: string
+      - description: User Form
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/handler.userForm'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Edit user profile
+      tags:
+      - User
+  /api/users:
+    get:
+      operationId: user-find
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Get all users
+      tags:
+      - User
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
