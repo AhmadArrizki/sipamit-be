@@ -9,6 +9,7 @@ import (
 	"sipamit-be/api/device/repo"
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type toaForm struct {
@@ -60,11 +61,17 @@ func NewTOAAPIHandler(e *echo.Echo, db *mongo.Database) *TOAHandler {
 // @Summary Get all toas
 // @ID get-all-toas
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/toas [GET]
 // @Produce json
 // @Success 200
 func (h *TOAHandler) findAll(c echo.Context) error {
-	toas, err := h.toaRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	toas, err := h.toaRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get toas: %v", err)
@@ -72,7 +79,18 @@ func (h *TOAHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "TOAs not found")
 	}
-	return c.JSON(http.StatusOK, toas)
+
+	totalToas, err := h.toaRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count toas: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "TOAs not found")
+	}
+
+	result := util.MakeResult(toas, totalToas, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findOne

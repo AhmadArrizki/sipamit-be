@@ -9,6 +9,7 @@ import (
 	"sipamit-be/api/device/repo"
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type komputerPH2Form struct {
@@ -64,11 +65,17 @@ func NewKomputerPH2APIHandler(e *echo.Echo, db *mongo.Database) *KomputerPH2Hand
 // @Summary Get all komputer-ph2s
 // @ID get-all-komputer-ph2s
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/komputer-ph2s [GET]
 // @Produce json
 // @Success 200
 func (h *KomputerPH2Handler) findAll(c echo.Context) error {
-	komputerPH2s, err := h.kph2Repo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	komputerPH2s, err := h.kph2Repo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get komputerPH2s: %v", err)
@@ -76,7 +83,18 @@ func (h *KomputerPH2Handler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "KomputerPH2s not found")
 	}
-	return c.JSON(http.StatusOK, komputerPH2s)
+
+	totalKph2, err := h.kph2Repo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count komputerPH2s: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "KomputerPH2s not found")
+	}
+
+	result := util.MakeResult(komputerPH2s, totalKph2, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findOne

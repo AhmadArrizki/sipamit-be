@@ -5,6 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/util"
 )
 
 type TOA struct {
@@ -28,13 +29,23 @@ func NewTOARepository(db *mongo.Database) *TOACollRepository {
 	}
 }
 
-func (r *TOACollRepository) FindAll() (*[]TOA, error) {
+func (r *TOACollRepository) FindAll(cq *util.CommonQuery) (*[]TOA, error) {
 	var toas []TOA
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
 
-	cur, err := r.coll.Find(context.TODO(), filter)
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	findOptions, err := util.BuildPaginationAndOrderOptionByField(bson.M{"_id": cq.Sort}, cq.Page, cq.Limit)
+	if err != nil {
+		return nil, err
+	}
+
+	cur, err := r.coll.Find(context.TODO(), filter, findOptions)
 	if err != nil {
 		return nil, err
 	}
@@ -43,6 +54,9 @@ func (r *TOACollRepository) FindAll() (*[]TOA, error) {
 	err = cur.All(context.TODO(), &toas)
 	if err != nil {
 		return nil, err
+	}
+	if toas == nil {
+		return &[]TOA{}, nil
 	}
 	return &toas, nil
 }
@@ -97,6 +111,23 @@ func (r *TOACollRepository) Count() (int64, error) {
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
+	count, err := r.coll.CountDocuments(context.TODO(), filter)
+	if err != nil {
+		return 0, err
+	}
+	return count, nil
+}
+
+func (r *TOACollRepository) CountQuery(cq *util.CommonQuery) (int64, error) {
+	filter := bson.M{
+		"is_deleted": bson.M{"$ne": true},
+	}
+
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
 	count, err := r.coll.CountDocuments(context.TODO(), filter)
 	if err != nil {
 		return 0, err

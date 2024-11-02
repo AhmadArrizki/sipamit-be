@@ -5,6 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/util"
 )
 
 type Telepon struct {
@@ -30,13 +31,23 @@ func NewTeleponRepository(db *mongo.Database) *TeleponCollRepository {
 	}
 }
 
-func (r *TeleponCollRepository) FindAll() (*[]Telepon, error) {
+func (r *TeleponCollRepository) FindAll(cq *util.CommonQuery) (*[]Telepon, error) {
 	var telepons []Telepon
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
 
-	cur, err := r.coll.Find(context.TODO(), filter)
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["tipe"] = bson.M{"$regex": pattern}
+	}
+
+	findOptions, err := util.BuildPaginationAndOrderOptionByField(bson.M{"_id": cq.Sort}, cq.Page, cq.Limit)
+	if err != nil {
+		return nil, err
+	}
+
+	cur, err := r.coll.Find(context.TODO(), filter, findOptions)
 	if err != nil {
 		return nil, err
 	}
@@ -45,6 +56,9 @@ func (r *TeleponCollRepository) FindAll() (*[]Telepon, error) {
 	err = cur.All(context.TODO(), &telepons)
 	if err != nil {
 		return nil, err
+	}
+	if telepons == nil {
+		return &[]Telepon{}, nil
 	}
 	return &telepons, nil
 }
@@ -99,6 +113,23 @@ func (r *TeleponCollRepository) Count() (int64, error) {
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
+	count, err := r.coll.CountDocuments(context.TODO(), filter)
+	if err != nil {
+		return 0, err
+	}
+	return count, nil
+}
+
+func (r *TeleponCollRepository) CountQuery(cq *util.CommonQuery) (int64, error) {
+	filter := bson.M{
+		"is_deleted": bson.M{"$ne": true},
+	}
+
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["tipe"] = bson.M{"$regex": pattern}
+	}
+
 	count, err := r.coll.CountDocuments(context.TODO(), filter)
 	if err != nil {
 		return 0, err

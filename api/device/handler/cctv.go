@@ -9,6 +9,7 @@ import (
 	"sipamit-be/api/device/repo"
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type cctvForm struct {
@@ -59,11 +60,17 @@ func NewCCTVAPIHandler(e *echo.Echo, db *mongo.Database) *CCTVHandler {
 // @Summary Get all cctvs
 // @ID get-all-cctvs
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/cctvs [GET]
 // @Produce json
 // @Success 200
 func (h *CCTVHandler) findAll(c echo.Context) error {
-	cctvs, err := h.cctvRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	cctvs, err := h.cctvRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get cctvs: %v", err)
@@ -71,7 +78,18 @@ func (h *CCTVHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "CCTVs not found")
 	}
-	return c.JSON(http.StatusOK, cctvs)
+
+	totalCctv, err := h.cctvRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count cctvs: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "CCTVs not found")
+	}
+
+	result := util.MakeResult(cctvs, totalCctv, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findOne

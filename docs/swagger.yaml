@@ -243,6 +243,28 @@ paths:
   /api/cctvs:
     get:
       operationId: get-all-cctvs
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -1381,6 +1403,28 @@ paths:
   /api/fingerprints:
     get:
       operationId: get-all-fingerprints
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -1475,6 +1519,28 @@ paths:
   /api/komputer-ph1s:
     get:
       operationId: get-all-komputer-ph1s
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -1569,6 +1635,28 @@ paths:
   /api/komputer-ph2s:
     get:
       operationId: get-all-komputer-ph2s
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -1681,6 +1769,28 @@ paths:
   /api/printers:
     get:
       operationId: get-all-printers
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -1775,6 +1885,28 @@ paths:
   /api/telepons:
     get:
       operationId: get-all-telepons
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -1869,6 +2001,28 @@ paths:
   /api/toas:
     get:
       operationId: get-all-toas
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -1882,6 +2036,28 @@ paths:
   /api/ups:
     get:
       operationId: get-all-ups
+      parameters:
+      - description: Search by nama
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:
@@ -2056,6 +2232,28 @@ paths:
   /api/users:
     get:
       operationId: user-find
+      parameters:
+      - description: Search by fullname
+        in: query
+        name: q
+        type: string
+      - default: 1
+        description: Page number pagination
+        in: query
+        name: page
+        type: integer
+      - default: 10
+        description: Limit pagination
+        in: query
+        name: limit
+        type: integer
+      - description: Sort
+        enum:
+        - asc
+        - desc
+        in: query
+        name: sort
+        type: string
       produces:
       - application/json
       responses:

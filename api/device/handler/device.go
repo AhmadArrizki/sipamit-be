@@ -7,6 +7,7 @@ import (
 	"sipamit-be/api/device/repo"
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/util"
 )
 
 type DeviceHandler struct {
@@ -50,9 +51,9 @@ func NewDeviceAPIHandler(e *echo.Echo, db *mongo.Database) *DeviceHandler {
 // @Success 200
 func (h *DeviceHandler) count(c echo.Context) error {
 	var total int64 = 0
-	param := c.QueryParam("device")
+	param := util.NewCommonQuery(c)
 
-	switch param {
+	switch param.Device {
 	case doc.CCTV:
 		cctvs, _ := h.cctvRepo.Count()
 		total += cctvs

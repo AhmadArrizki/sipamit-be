@@ -9,6 +9,7 @@ import (
 	"sipamit-be/api/device/repo"
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type printerForm struct {
@@ -60,11 +61,17 @@ func NewPrinterAPIHandler(e *echo.Echo, db *mongo.Database) *PrinterHandler {
 // @Summary Get all printers
 // @ID get-all-printers
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/printers [GET]
 // @Produce json
 // @Success 200
 func (h *PrinterHandler) findAll(c echo.Context) error {
-	printers, err := h.printerRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	printers, err := h.printerRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get printers: %v", err)
@@ -72,7 +79,18 @@ func (h *PrinterHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "Printers not found")
 	}
-	return c.JSON(http.StatusOK, printers)
+
+	totalPrinters, err := h.printerRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count printers: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "Printers not found")
+	}
+
+	result := util.MakeResult(printers, totalPrinters, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findOne

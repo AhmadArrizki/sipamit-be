@@ -116,6 +116,10 @@ func (h *UserHandler) create(c echo.Context) error {
 // @Summary Get all users
 // @ID user-find
 // @Security ApiKeyAuth
+// @Param q query string false "Search by fullname"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/users [GET]
 // @Produce json
 // @Success 200
@@ -126,7 +130,9 @@ func (h *UserHandler) find(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusForbidden, "Forbidden")
 	}
 
-	users, err := h.userRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	users, err := h.userRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to find all users: %v", err)
@@ -134,7 +140,18 @@ func (h *UserHandler) find(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "Users not found")
 	}
-	return c.JSON(http.StatusOK, users)
+
+	totalUser, err := h.userRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count users: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "Users not found")
+	}
+
+	result := util.MakeResult(users, totalUser, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // detail
