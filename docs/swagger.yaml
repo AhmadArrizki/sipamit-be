@@ -525,6 +525,33 @@ paths:
       summary: Update ups checkpoint
       tags:
       - Checkpoint
+  /api/device/count:
+    get:
+      operationId: device-count
+      parameters:
+      - description: Device type
+        enum:
+        - cctv
+        - fingerprint
+        - komputer_ph1
+        - komputer_ph2
+        - printer
+        - telepon
+        - toa
+        - ups
+        in: query
+        name: device
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Count all devices
+      tags:
+      - Device
   /api/doc/cctv:
     post:
       operationId: create-cctv-document

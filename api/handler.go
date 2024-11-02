@@ -10,6 +10,8 @@ import (
 )
 
 func NewInitHandler(e *echo.Echo, db *mongo.Database) {
+	deviceHandler.NewDeviceAPIHandler(e, db)
+
 	appHandler.NewAuthHandler(e, db)
 	appHandler.NewUserHandler(e, db)
 

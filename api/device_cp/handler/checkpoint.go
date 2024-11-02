@@ -69,7 +69,7 @@ func NewCheckpointAPIHandler(e *echo.Echo, db *mongo.Database) *CheckpointHandle
 // @Produce json
 // @Success 200
 func (h *CheckpointHandler) cctv(c echo.Context) error {
-	cctv, err := h.cpRepo.FindByDevice(doc.CheckpointCCTV)
+	cctv, err := h.cpRepo.FindByDevice(doc.CCTV)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get cctv checkpoint: %v", err)
@@ -89,7 +89,7 @@ func (h *CheckpointHandler) cctv(c echo.Context) error {
 // @Produce json
 // @Success 200
 func (h *CheckpointHandler) fingerprint(c echo.Context) error {
-	fingerprint, err := h.cpRepo.FindByDevice(doc.CheckpointFingerprint)
+	fingerprint, err := h.cpRepo.FindByDevice(doc.Fingerprint)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get fingerprint checkpoint: %v", err)
@@ -109,7 +109,7 @@ func (h *CheckpointHandler) fingerprint(c echo.Context) error {
 // @Produce json
 // @Success 200
 func (h *CheckpointHandler) komputerPh1(c echo.Context) error {
-	komputerPh1, err := h.cpRepo.FindByDevice(doc.CheckpointKomputerPH1)
+	komputerPh1, err := h.cpRepo.FindByDevice(doc.KomputerPH1)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get komputer-ph1 checkpoint: %v", err)
@@ -129,7 +129,7 @@ func (h *CheckpointHandler) komputerPh1(c echo.Context) error {
 // @Produce json
 // @Success 200
 func (h *CheckpointHandler) komputerPh2(c echo.Context) error {
-	komputerPh2, err := h.cpRepo.FindByDevice(doc.CheckpointKomputerPH2)
+	komputerPh2, err := h.cpRepo.FindByDevice(doc.KomputerPH2)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get komputer-ph2 checkpoint: %v", err)
@@ -149,7 +149,7 @@ func (h *CheckpointHandler) komputerPh2(c echo.Context) error {
 // @Produce json
 // @Success 200
 func (h *CheckpointHandler) printer(c echo.Context) error {
-	printer, err := h.cpRepo.FindByDevice(doc.CheckpointPrinter)
+	printer, err := h.cpRepo.FindByDevice(doc.Printer)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get printer checkpoint: %v", err)
@@ -169,7 +169,7 @@ func (h *CheckpointHandler) printer(c echo.Context) error {
 // @Produce json
 // @Success 200
 func (h *CheckpointHandler) telepon(c echo.Context) error {
-	telepon, err := h.cpRepo.FindByDevice(doc.CheckpointTelepon)
+	telepon, err := h.cpRepo.FindByDevice(doc.Telepon)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get telepon checkpoint: %v", err)
@@ -209,7 +209,7 @@ func (h *CheckpointHandler) toa(c echo.Context) error {
 // @Produce json
 // @Success 200
 func (h *CheckpointHandler) ups(c echo.Context) error {
-	ups, err := h.cpRepo.FindByDevice(doc.CheckpointUPS)
+	ups, err := h.cpRepo.FindByDevice(doc.Ups)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get ups checkpoint: %v", err)
@@ -238,7 +238,7 @@ func (h *CheckpointHandler) updateCCTV(c echo.Context) error {
 		return err
 	}
 
-	cctv, err := h.cpRepo.FindByDevice(doc.CheckpointCCTV)
+	cctv, err := h.cpRepo.FindByDevice(doc.CCTV)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get cctv checkpoint: %v", err)
@@ -250,7 +250,7 @@ func (h *CheckpointHandler) updateCCTV(c echo.Context) error {
 	cctv.Checkpoint = f.Checkpoint
 	cctv.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointCCTV, cctv)
+	err = h.cpRepo.UpdateByDevice(doc.CCTV, cctv)
 	if err != nil {
 		log.Errorf("Failed to update cctv checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
@@ -276,7 +276,7 @@ func (h *CheckpointHandler) updateFingerprint(c echo.Context) error {
 		return err
 	}
 
-	fingerprint, err := h.cpRepo.FindByDevice(doc.CheckpointFingerprint)
+	fingerprint, err := h.cpRepo.FindByDevice(doc.Fingerprint)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get fingerprint checkpoint: %v", err)
@@ -288,7 +288,7 @@ func (h *CheckpointHandler) updateFingerprint(c echo.Context) error {
 	fingerprint.Checkpoint = f.Checkpoint
 	fingerprint.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointFingerprint, fingerprint)
+	err = h.cpRepo.UpdateByDevice(doc.Fingerprint, fingerprint)
 	if err != nil {
 		log.Errorf("Failed to update fingerprint checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
@@ -314,7 +314,7 @@ func (h *CheckpointHandler) updateKomputerPh1(c echo.Context) error {
 		return err
 	}
 
-	komputerPh1, err := h.cpRepo.FindByDevice(doc.CheckpointKomputerPH1)
+	komputerPh1, err := h.cpRepo.FindByDevice(doc.KomputerPH1)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get komputer-ph1 checkpoint: %v", err)
@@ -326,7 +326,7 @@ func (h *CheckpointHandler) updateKomputerPh1(c echo.Context) error {
 	komputerPh1.Checkpoint = f.Checkpoint
 	komputerPh1.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointKomputerPH1, komputerPh1)
+	err = h.cpRepo.UpdateByDevice(doc.KomputerPH1, komputerPh1)
 	if err != nil {
 		log.Errorf("Failed to update komputer-ph1 checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
@@ -352,7 +352,7 @@ func (h *CheckpointHandler) updateKomputerPh2(c echo.Context) error {
 		return err
 	}
 
-	komputerPh2, err := h.cpRepo.FindByDevice(doc.CheckpointKomputerPH2)
+	komputerPh2, err := h.cpRepo.FindByDevice(doc.KomputerPH2)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get komputer-ph2 checkpoint: %v", err)
@@ -364,7 +364,7 @@ func (h *CheckpointHandler) updateKomputerPh2(c echo.Context) error {
 	komputerPh2.Checkpoint = f.Checkpoint
 	komputerPh2.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointKomputerPH2, komputerPh2)
+	err = h.cpRepo.UpdateByDevice(doc.KomputerPH2, komputerPh2)
 	if err != nil {
 		log.Errorf("Failed to update komputer-ph2 checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
@@ -390,7 +390,7 @@ func (h *CheckpointHandler) updatePrinter(c echo.Context) error {
 		return err
 	}
 
-	printer, err := h.cpRepo.FindByDevice(doc.CheckpointPrinter)
+	printer, err := h.cpRepo.FindByDevice(doc.Printer)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get printer checkpoint: %v", err)
@@ -402,7 +402,7 @@ func (h *CheckpointHandler) updatePrinter(c echo.Context) error {
 	printer.Checkpoint = f.Checkpoint
 	printer.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointPrinter, printer)
+	err = h.cpRepo.UpdateByDevice(doc.Printer, printer)
 	if err != nil {
 		log.Errorf("Failed to update printer checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
@@ -428,7 +428,7 @@ func (h *CheckpointHandler) updateTelepon(c echo.Context) error {
 		return err
 	}
 
-	telepon, err := h.cpRepo.FindByDevice(doc.CheckpointTelepon)
+	telepon, err := h.cpRepo.FindByDevice(doc.Telepon)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get telepon checkpoint: %v", err)
@@ -440,7 +440,7 @@ func (h *CheckpointHandler) updateTelepon(c echo.Context) error {
 	telepon.Checkpoint = f.Checkpoint
 	telepon.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointTelepon, telepon)
+	err = h.cpRepo.UpdateByDevice(doc.Telepon, telepon)
 	if err != nil {
 		log.Errorf("Failed to update telepon checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
@@ -466,7 +466,7 @@ func (h *CheckpointHandler) updateToa(c echo.Context) error {
 		return err
 	}
 
-	toa, err := h.cpRepo.FindByDevice(doc.CheckpointTOA)
+	toa, err := h.cpRepo.FindByDevice(doc.Toa)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get toa checkpoint: %v", err)
@@ -478,7 +478,7 @@ func (h *CheckpointHandler) updateToa(c echo.Context) error {
 	toa.Checkpoint = f.Checkpoint
 	toa.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointTOA, toa)
+	err = h.cpRepo.UpdateByDevice(doc.Toa, toa)
 	if err != nil {
 		log.Errorf("Failed to update toa checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
@@ -504,7 +504,7 @@ func (h *CheckpointHandler) updateUps(c echo.Context) error {
 		return err
 	}
 
-	ups, err := h.cpRepo.FindByDevice(doc.CheckpointUPS)
+	ups, err := h.cpRepo.FindByDevice(doc.Ups)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get ups checkpoint: %v", err)
@@ -516,7 +516,7 @@ func (h *CheckpointHandler) updateUps(c echo.Context) error {
 	ups.Checkpoint = f.Checkpoint
 	ups.Updated = nc.Claims.ByAtPtr()
 
-	err = h.cpRepo.UpdateByDevice(doc.CheckpointUPS, ups)
+	err = h.cpRepo.UpdateByDevice(doc.Ups, ups)
 	if err != nil {
 		log.Errorf("Failed to update ups checkpoint: %v", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")

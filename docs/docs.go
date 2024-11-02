@@ -616,6 +616,46 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/device/count": {
+            "get": {
+                "security": [
+                    {
+                        "ApiKeyAuth": []
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Device"
+                ],
+                "summary": "Count all devices",
+                "operationId": "device-count",
+                "parameters": [
+                    {
+                        "enum": [
+                            "cctv",
+                            "fingerprint",
+                            "komputer_ph1",
+                            "komputer_ph2",
+                            "printer",
+                            "telepon",
+                            "toa",
+                            "ups"
+                        ],
+                        "type": "string",
+                        "description": "Device type",
+                        "name": "device",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
         "/api/doc/cctv": {
             "post": {
                 "security": [

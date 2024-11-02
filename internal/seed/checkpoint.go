@@ -27,7 +27,7 @@ func Checkpoint(db *mongo.Database) {
 var cps = []repo.Checkpoint{
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointCCTV,
+		Device: doc.CCTV,
 		Checkpoint: []string{
 			"Kebersihan Perangkat",
 			"Penyimpanan histori",
@@ -36,7 +36,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointFingerprint,
+		Device: doc.Fingerprint,
 		Checkpoint: []string{
 			"Jam Finger",
 			"Kondisi Sensor",
@@ -48,7 +48,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointKomputerPH1,
+		Device: doc.KomputerPH1,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Kipas pendingin",
@@ -62,7 +62,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointKomputerPH2,
+		Device: doc.KomputerPH2,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Kipas pendingin",
@@ -76,7 +76,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointPrinter,
+		Device: doc.Printer,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Hasil cetak / scan",
@@ -88,7 +88,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointTelepon,
+		Device: doc.Telepon,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Suara Dering",
@@ -98,7 +98,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointTOA,
+		Device: doc.Toa,
 		Checkpoint: []string{
 			"Kebersihan Perangkat",
 			"Suara",
@@ -106,7 +106,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CheckpointUPS,
+		Device: doc.Ups,
 		Checkpoint: []string{
 			"Kebersihan Perangkat",
 			"Pemeriksaan daya",
