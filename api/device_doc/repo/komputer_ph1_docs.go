@@ -5,6 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/util"
 )
 
 type KomputerPH1Doc struct {
@@ -33,13 +34,23 @@ func NewKomputerPH1DocRepository(db *mongo.Database) *KomputerPH1DocCollReposito
 	}
 }
 
-func (r *KomputerPH1DocCollRepository) FindAll() (*[]KomputerPH1Doc, error) {
+func (r *KomputerPH1DocCollRepository) FindAll(cq *util.CommonQuery) (*[]KomputerPH1Doc, error) {
 	var kph1Doc []KomputerPH1Doc
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
 
-	cur, err := r.coll.Find(context.TODO(), filter)
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	findOptions, err := util.BuildPaginationAndOrderOptionByField(bson.M{"_id": cq.Sort}, cq.Page, cq.Limit)
+	if err != nil {
+		return nil, err
+	}
+
+	cur, err := r.coll.Find(context.TODO(), filter, findOptions)
 	if err != nil {
 		return nil, err
 	}
@@ -48,6 +59,9 @@ func (r *KomputerPH1DocCollRepository) FindAll() (*[]KomputerPH1Doc, error) {
 	err = cur.All(context.TODO(), &kph1Doc)
 	if err != nil {
 		return nil, err
+	}
+	if kph1Doc == nil {
+		return &[]KomputerPH1Doc{}, nil
 	}
 	return &kph1Doc, nil
 }
@@ -89,6 +103,23 @@ func (r *KomputerPH1DocCollRepository) UpdateOneByID(id bson.ObjectID, kph1Doc *
 		return err
 	}
 	return nil
+}
+
+func (r *KomputerPH1DocCollRepository) CountQuery(cq *util.CommonQuery) (int64, error) {
+	filter := bson.M{
+		"is_deleted": bson.M{"$ne": true},
+	}
+
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	count, err := r.coll.CountDocuments(context.TODO(), filter)
+	if err != nil {
+		return 0, err
+	}
+	return count, nil
 }
 
 func (r *KomputerPH1DocCollRepository) DeleteOneByID(id bson.ObjectID) error {

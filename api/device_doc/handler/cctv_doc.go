@@ -11,6 +11,7 @@ import (
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type CCTVDocHandler struct {
@@ -43,11 +44,17 @@ func NewCCTVDocAPIHandler(e *echo.Echo, db *mongo.Database) *CCTVDocHandler {
 // @Summary Get all cctv documents
 // @ID get-all-cctv-documents
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/doc/cctvs [GET]
 // @Produce json
 // @Success 200
 func (h *CCTVDocHandler) findAll(c echo.Context) error {
-	cctvDocs, err := h.cctvDocRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	cctvDocs, err := h.cctvDocRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get cctvDocs: %v", err)
@@ -55,7 +62,18 @@ func (h *CCTVDocHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "CCTV Docs not found")
 	}
-	return c.JSON(http.StatusOK, cctvDocs)
+
+	totalCctvDocs, err := h.cctvDocRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count cctvDocs: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "CCTV Docs not found")
+	}
+
+	result := util.MakeResult(cctvDocs, totalCctvDocs, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findByID

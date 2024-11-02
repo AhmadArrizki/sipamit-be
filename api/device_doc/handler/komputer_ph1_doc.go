@@ -11,6 +11,7 @@ import (
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type KomputerPH1DocHandler struct {
@@ -43,11 +44,17 @@ func NewKomputerPH1DocAPIHandler(e *echo.Echo, db *mongo.Database) *KomputerPH1D
 // @Summary Get all komputer ph1 documents
 // @ID get-all-komputer-ph1-documents
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/doc/komputer-ph1s [GET]
 // @Produce json
 // @Success 200
 func (h *KomputerPH1DocHandler) findAll(c echo.Context) error {
-	kph1Doc, err := h.kph1DocRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	kph1Doc, err := h.kph1DocRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get kph1Doc: %v", err)
@@ -55,7 +62,18 @@ func (h *KomputerPH1DocHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "Komputer PH1 Docs not found")
 	}
-	return c.JSON(http.StatusOK, kph1Doc)
+
+	totalKph1Docs, err := h.kph1DocRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count kph1Doc: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "Komputer PH1 Docs not found")
+	}
+
+	result := util.MakeResult(kph1Doc, totalKph1Docs, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findByID

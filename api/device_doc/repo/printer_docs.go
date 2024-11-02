@@ -5,6 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/util"
 )
 
 type PrinterDoc struct {
@@ -29,13 +30,23 @@ func NewPrinterDocRepository(db *mongo.Database) *PrinterDocCollRepository {
 	}
 }
 
-func (r *PrinterDocCollRepository) FindAll() (*[]PrinterDoc, error) {
+func (r *PrinterDocCollRepository) FindAll(cq *util.CommonQuery) (*[]PrinterDoc, error) {
 	var printerDocs []PrinterDoc
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
 
-	cur, err := r.coll.Find(context.TODO(), filter)
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	findOptions, err := util.BuildPaginationAndOrderOptionByField(bson.M{"_id": cq.Sort}, cq.Page, cq.Limit)
+	if err != nil {
+		return nil, err
+	}
+
+	cur, err := r.coll.Find(context.TODO(), filter, findOptions)
 	if err != nil {
 		return nil, err
 	}
@@ -44,6 +55,9 @@ func (r *PrinterDocCollRepository) FindAll() (*[]PrinterDoc, error) {
 	err = cur.All(context.TODO(), &printerDocs)
 	if err != nil {
 		return nil, err
+	}
+	if printerDocs == nil {
+		return &[]PrinterDoc{}, nil
 	}
 	return &printerDocs, nil
 }
@@ -85,6 +99,23 @@ func (r *PrinterDocCollRepository) UpdateOneByID(id bson.ObjectID, printerDoc *P
 		return err
 	}
 	return nil
+}
+
+func (r *PrinterDocCollRepository) CountQuery(cq *util.CommonQuery) (int64, error) {
+	filter := bson.M{
+		"is_deleted": bson.M{"$ne": true},
+	}
+
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	count, err := r.coll.CountDocuments(context.TODO(), filter)
+	if err != nil {
+		return 0, err
+	}
+	return count, nil
 }
 
 func (r *PrinterDocCollRepository) DeleteOneByID(id bson.ObjectID) error {

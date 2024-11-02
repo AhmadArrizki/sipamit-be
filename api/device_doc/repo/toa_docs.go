@@ -5,6 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/util"
 )
 
 type TOADoc struct {
@@ -29,13 +30,23 @@ func NewTOADocRepository(db *mongo.Database) *TOADocCollRepository {
 	}
 }
 
-func (r *TOADocCollRepository) FindAll() (*[]TOADoc, error) {
+func (r *TOADocCollRepository) FindAll(cq *util.CommonQuery) (*[]TOADoc, error) {
 	var toaDocs []TOADoc
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
 
-	cur, err := r.coll.Find(context.TODO(), filter)
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	findOptions, err := util.BuildPaginationAndOrderOptionByField(bson.M{"_id": cq.Sort}, cq.Page, cq.Limit)
+	if err != nil {
+		return nil, err
+	}
+
+	cur, err := r.coll.Find(context.TODO(), filter, findOptions)
 	if err != nil {
 		return nil, err
 	}
@@ -44,6 +55,9 @@ func (r *TOADocCollRepository) FindAll() (*[]TOADoc, error) {
 	err = cur.All(context.TODO(), &toaDocs)
 	if err != nil {
 		return nil, err
+	}
+	if toaDocs == nil {
+		return &[]TOADoc{}, nil
 	}
 	return &toaDocs, nil
 }
@@ -85,6 +99,23 @@ func (r *TOADocCollRepository) UpdateOneByID(id bson.ObjectID, toaDoc *TOADoc) e
 		return err
 	}
 	return nil
+}
+
+func (r *TOADocCollRepository) CountQuery(cq *util.CommonQuery) (int64, error) {
+	filter := bson.M{
+		"is_deleted": bson.M{"$ne": true},
+	}
+
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	count, err := r.coll.CountDocuments(context.TODO(), filter)
+	if err != nil {
+		return 0, err
+	}
+	return count, nil
 }
 
 func (r *TOADocCollRepository) DeleteOneByID(id bson.ObjectID) error {

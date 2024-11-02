@@ -11,6 +11,7 @@ import (
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type FingerprintDocHandler struct {
@@ -43,11 +44,17 @@ func NewFingerprintDocAPIHandler(e *echo.Echo, db *mongo.Database) *FingerprintD
 // @Summary Get all fingerprint documents
 // @ID get-all-fingerprint-documents
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/doc/fingerprints [GET]
 // @Produce json
 // @Success 200
 func (h *FingerprintDocHandler) findAll(c echo.Context) error {
-	fpDocs, err := h.fpDocRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	fpDocs, err := h.fpDocRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get fingerprintDocs: %v", err)
@@ -55,7 +62,18 @@ func (h *FingerprintDocHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "Fingerprint Docs not found")
 	}
-	return c.JSON(http.StatusOK, fpDocs)
+
+	totalFpDocs, err := h.fpDocRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count fingerprintDocs: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "Fingerprint Docs not found")
+	}
+
+	result := util.MakeResult(fpDocs, totalFpDocs, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findByID

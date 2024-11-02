@@ -5,6 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/util"
 )
 
 type FingerprintDoc struct {
@@ -28,13 +29,23 @@ func NewFingerprintDocRepository(db *mongo.Database) *FingerprintDocCollReposito
 	}
 }
 
-func (r *FingerprintDocCollRepository) FindAll() (*[]FingerprintDoc, error) {
+func (r *FingerprintDocCollRepository) FindAll(cq *util.CommonQuery) (*[]FingerprintDoc, error) {
 	var fpDocs []FingerprintDoc
 	filter := bson.M{
 		"is_deleted": bson.M{"$ne": true},
 	}
 
-	cur, err := r.coll.Find(context.TODO(), filter)
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	findOptions, err := util.BuildPaginationAndOrderOptionByField(bson.M{"_id": cq.Sort}, cq.Page, cq.Limit)
+	if err != nil {
+		return nil, err
+	}
+
+	cur, err := r.coll.Find(context.TODO(), filter, findOptions)
 	if err != nil {
 		return nil, err
 	}
@@ -43,6 +54,9 @@ func (r *FingerprintDocCollRepository) FindAll() (*[]FingerprintDoc, error) {
 	err = cur.All(context.TODO(), &fpDocs)
 	if err != nil {
 		return nil, err
+	}
+	if fpDocs == nil {
+		return &[]FingerprintDoc{}, nil
 	}
 	return &fpDocs, nil
 }
@@ -84,6 +98,23 @@ func (r *FingerprintDocCollRepository) UpdateOneByID(id bson.ObjectID, fpDoc *Fi
 		return err
 	}
 	return nil
+}
+
+func (r *FingerprintDocCollRepository) CountQuery(cq *util.CommonQuery) (int64, error) {
+	filter := bson.M{
+		"is_deleted": bson.M{"$ne": true},
+	}
+
+	if len(cq.Q) > 0 {
+		var pattern = bson.Regex{Pattern: cq.Q, Options: "i"}
+		filter["nama"] = bson.M{"$regex": pattern}
+	}
+
+	count, err := r.coll.CountDocuments(context.TODO(), filter)
+	if err != nil {
+		return 0, err
+	}
+	return count, nil
 }
 
 func (r *FingerprintDocCollRepository) DeleteOneByID(id bson.ObjectID) error {

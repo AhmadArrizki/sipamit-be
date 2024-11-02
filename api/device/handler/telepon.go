@@ -63,7 +63,7 @@ func NewTeleponAPIHandler(e *echo.Echo, db *mongo.Database) *TeleponHandler {
 // @Summary Get all telepons
 // @ID get-all-telepons
 // @Security ApiKeyAuth
-// @Param q query string false "Search by nama"
+// @Param q query string false "Search by tipe"
 // @Param page query int false "Page number pagination" default(1)
 // @Param limit query int false "Limit pagination" default(10)
 // @Param sort query string false "Sort" enums(asc,desc)

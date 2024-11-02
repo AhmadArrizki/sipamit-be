@@ -11,6 +11,7 @@ import (
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type UPSDocHandler struct {
@@ -43,11 +44,17 @@ func NewUPSDocAPIHandler(e *echo.Echo, db *mongo.Database) *UPSDocHandler {
 // @Summary Get all ups documents
 // @ID get-all-ups-documents
 // @Security ApiKeyAuth
+// @Param q query string false "Search by nama"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/doc/ups [GET]
 // @Produce json
 // @Success 200
 func (h *UPSDocHandler) findAll(c echo.Context) error {
-	upsDocs, err := h.upsDocRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	upsDocs, err := h.upsDocRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get upsDocs: %v", err)
@@ -55,7 +62,18 @@ func (h *UPSDocHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "UPS Docs not found")
 	}
-	return c.JSON(http.StatusOK, upsDocs)
+
+	totalUpsDocs, err := h.upsDocRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count upsDocs: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "UPS Docs not found")
+	}
+
+	result := util.MakeResult(upsDocs, totalUpsDocs, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findByID

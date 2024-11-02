@@ -11,6 +11,7 @@ import (
 	"sipamit-be/internal/pkg/context"
 	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/log"
+	"sipamit-be/internal/pkg/util"
 )
 
 type TeleponDocHandler struct {
@@ -43,11 +44,17 @@ func NewTeleponDocAPIHandler(e *echo.Echo, db *mongo.Database) *TeleponDocHandle
 // @Summary Get all telepons documents
 // @ID get-all-telepons-documents
 // @Security ApiKeyAuth
+// @Param q query string false "Search by tipe"
+// @Param page query int false "Page number pagination" default(1)
+// @Param limit query int false "Limit pagination" default(10)
+// @Param sort query string false "Sort" enums(asc,desc)
 // @Router /api/doc/telepons [GET]
 // @Produce json
 // @Success 200
 func (h *TeleponDocHandler) findAll(c echo.Context) error {
-	teleponDocs, err := h.teleponDocRepo.FindAll()
+	cq := util.NewCommonQuery(c)
+
+	teleponDocs, err := h.teleponDocRepo.FindAll(cq)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to get teleponDocs: %v", err)
@@ -55,7 +62,18 @@ func (h *TeleponDocHandler) findAll(c echo.Context) error {
 		}
 		return echo.NewHTTPError(http.StatusNotFound, "Telepon Docs not found")
 	}
-	return c.JSON(http.StatusOK, teleponDocs)
+
+	totalTeleponDocs, err := h.teleponDocRepo.CountQuery(cq)
+	if err != nil {
+		if !errors.Is(err, mongo.ErrNoDocuments) {
+			log.Errorf("Failed to count teleponDocs: %v", err)
+			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
+		}
+		return echo.NewHTTPError(http.StatusNotFound, "Telepon Docs not found")
+	}
+
+	result := util.MakeResult(teleponDocs, totalTeleponDocs, cq.Page, cq.Limit)
+	return c.JSON(http.StatusOK, result)
 }
 
 // findByID
