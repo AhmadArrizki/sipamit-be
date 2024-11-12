@@ -34,10 +34,8 @@ var telepons = []repo.Telepon{
 		Ext:        "0",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -47,10 +45,8 @@ var telepons = []repo.Telepon{
 		Ext:        "118",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7220X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -60,10 +56,8 @@ var telepons = []repo.Telepon{
 		Ext:        "119",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -73,10 +67,8 @@ var telepons = []repo.Telepon{
 		Ext:        "115",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7250X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -86,10 +78,8 @@ var telepons = []repo.Telepon{
 		Ext:        "113",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7250X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -99,10 +89,8 @@ var telepons = []repo.Telepon{
 		Ext:        "120",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -112,10 +100,8 @@ var telepons = []repo.Telepon{
 		Ext:        "112",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -125,10 +111,8 @@ var telepons = []repo.Telepon{
 		Ext:        "116",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -138,10 +122,8 @@ var telepons = []repo.Telepon{
 		Ext:        "317",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -151,10 +133,8 @@ var telepons = []repo.Telepon{
 		Ext:        "111",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7250X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -164,10 +144,8 @@ var telepons = []repo.Telepon{
 		Ext:        "114",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -177,10 +155,8 @@ var telepons = []repo.Telepon{
 		Ext:        "240",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -190,10 +166,8 @@ var telepons = []repo.Telepon{
 		Ext:        "122",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -203,10 +177,8 @@ var telepons = []repo.Telepon{
 		Ext:        "123",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -216,10 +188,8 @@ var telepons = []repo.Telepon{
 		Ext:        "131",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7433X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -229,10 +199,8 @@ var telepons = []repo.Telepon{
 		Ext:        "132",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 
 	{
@@ -243,10 +211,8 @@ var telepons = []repo.Telepon{
 		Ext:        "133",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -256,10 +222,8 @@ var telepons = []repo.Telepon{
 		Ext:        "134",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -269,10 +233,8 @@ var telepons = []repo.Telepon{
 		Ext:        "135",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -282,10 +244,8 @@ var telepons = []repo.Telepon{
 		Ext:        "136",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -295,10 +255,8 @@ var telepons = []repo.Telepon{
 		Ext:        "137",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -308,10 +266,8 @@ var telepons = []repo.Telepon{
 		Ext:        "128",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -321,10 +277,8 @@ var telepons = []repo.Telepon{
 		Ext:        "241",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -334,10 +288,8 @@ var telepons = []repo.Telepon{
 		Ext:        "161",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXC",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -347,10 +299,8 @@ var telepons = []repo.Telepon{
 		Ext:        "150",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T-7433X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -360,10 +310,8 @@ var telepons = []repo.Telepon{
 		Ext:        "151",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -373,10 +321,8 @@ var telepons = []repo.Telepon{
 		Ext:        "153",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -386,10 +332,8 @@ var telepons = []repo.Telepon{
 		Ext:        "154",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -399,10 +343,8 @@ var telepons = []repo.Telepon{
 		Ext:        "155",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -412,10 +354,8 @@ var telepons = []repo.Telepon{
 		Ext:        "159",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -425,10 +365,8 @@ var telepons = []repo.Telepon{
 		Ext:        "156",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXC",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -438,10 +376,8 @@ var telepons = []repo.Telepon{
 		Ext:        "157",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -451,10 +387,8 @@ var telepons = []repo.Telepon{
 		Ext:        "160",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7220X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -464,10 +398,8 @@ var telepons = []repo.Telepon{
 		Ext:        "158",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -477,10 +409,8 @@ var telepons = []repo.Telepon{
 		Ext:        "144",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7220X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -490,10 +420,8 @@ var telepons = []repo.Telepon{
 		Ext:        "141",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -503,10 +431,8 @@ var telepons = []repo.Telepon{
 		Ext:        "145",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -516,10 +442,8 @@ var telepons = []repo.Telepon{
 		Ext:        "142",
 		Merk:       "SAHITEL",
 		Tipe:       "S21W",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -529,10 +453,8 @@ var telepons = []repo.Telepon{
 		Ext:        "211",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXR",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -542,10 +464,8 @@ var telepons = []repo.Telepon{
 		Ext:        "210",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -555,10 +475,8 @@ var telepons = []repo.Telepon{
 		Ext:        "212",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -568,10 +486,8 @@ var telepons = []repo.Telepon{
 		Ext:        "215",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -581,10 +497,8 @@ var telepons = []repo.Telepon{
 		Ext:        "310",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -594,10 +508,8 @@ var telepons = []repo.Telepon{
 		Ext:        "301",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -607,10 +519,8 @@ var telepons = []repo.Telepon{
 		Ext:        "302",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -620,10 +530,8 @@ var telepons = []repo.Telepon{
 		Ext:        "303",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TG6411CX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -633,10 +541,8 @@ var telepons = []repo.Telepon{
 		Ext:        "304",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7220X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -646,10 +552,8 @@ var telepons = []repo.Telepon{
 		Ext:        "305",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -659,10 +563,8 @@ var telepons = []repo.Telepon{
 		Ext:        "307",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7235X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -672,10 +574,8 @@ var telepons = []repo.Telepon{
 		Ext:        "316",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7235X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -685,10 +585,8 @@ var telepons = []repo.Telepon{
 		Ext:        "126",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS3MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -698,10 +596,8 @@ var telepons = []repo.Telepon{
 		Ext:        "124",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -711,10 +607,8 @@ var telepons = []repo.Telepon{
 		Ext:        "125",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7250X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -724,10 +618,8 @@ var telepons = []repo.Telepon{
 		Ext:        "138",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -737,10 +629,8 @@ var telepons = []repo.Telepon{
 		Ext:        "139",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -750,10 +640,8 @@ var telepons = []repo.Telepon{
 		Ext:        "214",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -763,10 +651,8 @@ var telepons = []repo.Telepon{
 		Ext:        "0/201",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-DT543",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -776,10 +662,8 @@ var telepons = []repo.Telepon{
 		Ext:        "-",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -789,10 +673,8 @@ var telepons = []repo.Telepon{
 		Ext:        "159",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXW",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -802,10 +684,8 @@ var telepons = []repo.Telepon{
 		Ext:        "111",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -815,10 +695,8 @@ var telepons = []repo.Telepon{
 		Ext:        "103",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -828,10 +706,8 @@ var telepons = []repo.Telepon{
 		Ext:        "112",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -841,10 +717,8 @@ var telepons = []repo.Telepon{
 		Ext:        "106",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -854,10 +728,8 @@ var telepons = []repo.Telepon{
 		Ext:        "401",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -867,10 +739,8 @@ var telepons = []repo.Telepon{
 		Ext:        "107",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -880,10 +750,8 @@ var telepons = []repo.Telepon{
 		Ext:        "114",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -893,10 +761,8 @@ var telepons = []repo.Telepon{
 		Ext:        "104",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MX",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -906,10 +772,8 @@ var telepons = []repo.Telepon{
 		Ext:        "101",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TG6811CX2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -919,10 +783,8 @@ var telepons = []repo.Telepon{
 		Ext:        "102",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TG6811CX2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -932,10 +794,8 @@ var telepons = []repo.Telepon{
 		Ext:        "306",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -945,10 +805,8 @@ var telepons = []repo.Telepon{
 		Ext:        "305",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -958,10 +816,8 @@ var telepons = []repo.Telepon{
 		Ext:        "303",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -971,10 +827,8 @@ var telepons = []repo.Telepon{
 		Ext:        "202",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-TS505MXB",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -984,9 +838,7 @@ var telepons = []repo.Telepon{
 		Ext:        "",
 		Merk:       "PANASONIC",
 		Tipe:       "KX-T7450X",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 }

@@ -6,18 +6,16 @@ import (
 )
 
 func main() {
-	db := _db.Connect()
-
-	seed.SuperAdmin(db)
-	seed.Checkpoint(db)
-	seed.CCTV(db)
-	seed.FingerPrint(db)
-	seed.KomputerPH1(db)
-	seed.KomputerPH2(db)
-	seed.Printer(db)
-	seed.Telepon(db)
-	seed.TOA(db)
-	seed.UPS(db)
+	seed.SuperAdmin(_db.Client)
+	seed.Checkpoint(_db.Client)
+	seed.CCTV(_db.Client)
+	seed.FingerPrint(_db.Client)
+	seed.KomputerPH1(_db.Client)
+	seed.KomputerPH2(_db.Client)
+	seed.Printer(_db.Client)
+	seed.Telepon(_db.Client)
+	seed.TOA(_db.Client)
+	seed.UPS(_db.Client)
 
 	return
 }

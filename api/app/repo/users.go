@@ -2,10 +2,12 @@ package repo
 
 import (
 	"context"
+	"encoding/json"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
-	"sipamit-be/internal/pkg/doc"
+	_db "sipamit-be/internal/db"
 	"sipamit-be/internal/pkg/util"
+	"time"
 )
 
 type User struct {
@@ -14,9 +16,36 @@ type User struct {
 	Username  string        `json:"username" bson:"username"`
 	Password  string        `json:"-" bson:"password"`
 	Role      string        `json:"role" bson:"role"`
-	Inserted  doc.ByAt      `json:"inserted,omitempty" bson:"inserted,omitempty"`
-	Updated   *doc.ByAt     `json:"updated,omitempty" bson:"updated,omitempty"`
+	Inserted  ByAt          `json:"inserted,omitempty" bson:"inserted,omitempty"`
+	Updated   *ByAt         `json:"updated,omitempty" bson:"updated,omitempty"`
 	IsDeleted bool          `json:"-" bson:"is_deleted"`
+}
+
+type ByAt struct {
+	ID *bson.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
+	At time.Time      `json:"at" bson:"at"`
+}
+
+func (u *ByAt) MarshalJSON() ([]byte, error) {
+	type Alias ByAt
+	var fullName string
+
+	if u.ID != nil {
+		userRepo := NewUserRepository(_db.Client)
+
+		user, err := userRepo.FindByID(*u.ID)
+		if err == nil {
+			fullName = user.FullName
+		}
+	}
+
+	return json.Marshal(&struct {
+		*Alias
+		FullName string `json:"full_name" bson:"full_name"`
+	}{
+		Alias:    (*Alias)(u),
+		FullName: fullName,
+	})
 }
 
 type UserCollRepository struct {

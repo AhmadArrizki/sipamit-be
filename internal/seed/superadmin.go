@@ -5,10 +5,12 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/api/app/repo"
-	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/const"
 	"sipamit-be/internal/pkg/util"
 	"time"
 )
+
+var SuperAdminID bson.ObjectID
 
 func SuperAdmin(db *mongo.Database) {
 	userRepo := repo.NewUserRepository(db)
@@ -16,16 +18,25 @@ func SuperAdmin(db *mongo.Database) {
 	count, _ := userRepo.Count()
 	if count > 0 {
 		log.Info("User already seeded")
+
+		superadmin, err := userRepo.FindByUsername("superadmin")
+		if err == nil {
+			SuperAdminID = superadmin.ID
+		}
+
 		return
 	}
 
+	SuperAdminID = bson.NewObjectID()
+
 	superadmin := &repo.User{
-		ID:       bson.NewObjectID(),
+		ID:       SuperAdminID,
 		FullName: "Super Admin",
 		Username: "superadmin",
 		Password: util.CryptPassword("superadmin"),
-		Role:     doc.SuperAdminRole,
-		Inserted: doc.ByAt{
+		Role:     _const.SuperAdminRole,
+		Inserted: repo.ByAt{
+			ID: &SuperAdminID,
 			At: time.Now(),
 		},
 		IsDeleted: false,

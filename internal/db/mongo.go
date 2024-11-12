@@ -6,10 +6,15 @@ import (
 	"sipamit-be/internal/config"
 )
 
-func Connect() *mongo.Database {
-	client, err := mongo.Connect(options.Client().ApplyURI(config.Mongo.Url))
-	if err != nil {
-		panic(err)
+var Client *mongo.Database
+
+func init() {
+	if Client == nil {
+		client, err := mongo.Connect(options.Client().ApplyURI(config.Mongo.Url))
+		if err != nil {
+			panic(err)
+		}
+
+		Client = client.Database(config.Mongo.Name)
 	}
-	return client.Database(config.Mongo.Name)
 }

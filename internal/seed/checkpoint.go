@@ -5,7 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"sipamit-be/api/device_cp/repo"
-	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/const"
 )
 
 func Checkpoint(db *mongo.Database) {
@@ -27,7 +27,7 @@ func Checkpoint(db *mongo.Database) {
 var cps = []repo.Checkpoint{
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.CCTV,
+		Device: _const.CCTV,
 		Checkpoint: []string{
 			"Kebersihan Perangkat",
 			"Penyimpanan histori",
@@ -36,7 +36,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.Fingerprint,
+		Device: _const.Fingerprint,
 		Checkpoint: []string{
 			"Jam Finger",
 			"Kondisi Sensor",
@@ -48,7 +48,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.KomputerPH1,
+		Device: _const.KomputerPH1,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Kipas pendingin",
@@ -62,7 +62,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.KomputerPH2,
+		Device: _const.KomputerPH2,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Kipas pendingin",
@@ -76,7 +76,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.Printer,
+		Device: _const.Printer,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Hasil cetak / scan",
@@ -88,7 +88,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.Telepon,
+		Device: _const.Telepon,
 		Checkpoint: []string{
 			"Kebersihan perangkat",
 			"Suara Dering",
@@ -98,7 +98,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.Toa,
+		Device: _const.Toa,
 		Checkpoint: []string{
 			"Kebersihan Perangkat",
 			"Suara",
@@ -106,7 +106,7 @@ var cps = []repo.Checkpoint{
 	},
 	{
 		ID:     bson.NewObjectID(),
-		Device: doc.Ups,
+		Device: _const.Ups,
 		Checkpoint: []string{
 			"Kebersihan Perangkat",
 			"Pemeriksaan daya",

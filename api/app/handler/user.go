@@ -7,10 +7,11 @@ import (
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"net/http"
 	"sipamit-be/api/app/repo"
+	"sipamit-be/internal/pkg/const"
 	"sipamit-be/internal/pkg/context"
-	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/log"
 	"sipamit-be/internal/pkg/util"
+	"time"
 )
 
 type userForm struct {
@@ -94,12 +95,15 @@ func (h *UserHandler) create(c echo.Context) error {
 	}
 
 	user := &repo.User{
-		ID:        bson.NewObjectID(),
-		FullName:  f.FullName,
-		Username:  f.Username,
-		Password:  util.CryptPassword(f.Password),
-		Role:      doc.AdminRole,
-		Inserted:  nc.Claims.ByAt(),
+		ID:       bson.NewObjectID(),
+		FullName: f.FullName,
+		Username: f.Username,
+		Password: util.CryptPassword(f.Password),
+		Role:     _const.AdminRole,
+		Inserted: repo.ByAt{
+			ID: &nc.Claims.IDAsObjectID,
+			At: time.Now(),
+		},
 		IsDeleted: false,
 	}
 
@@ -243,7 +247,11 @@ func (h *UserHandler) editUserProfile(c echo.Context) error {
 		user.Password = util.CryptPassword(f.Password)
 	}
 
-	user.Updated = nc.Claims.ByAtPtr()
+	user.Updated = &repo.ByAt{
+		ID: &nc.Claims.IDAsObjectID,
+		At: time.Now(),
+	}
+
 	err = h.userRepo.UpdateOne(user)
 	if err != nil {
 		log.Errorf("Failed to update user: %v", err)

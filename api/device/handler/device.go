@@ -5,8 +5,8 @@ import (
 	"go.mongodb.org/mongo-driver/v2/mongo"
 	"net/http"
 	"sipamit-be/api/device/repo"
+	"sipamit-be/internal/pkg/const"
 	"sipamit-be/internal/pkg/context"
-	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/util"
 )
 
@@ -54,28 +54,28 @@ func (h *DeviceHandler) count(c echo.Context) error {
 	param := util.NewCommonQuery(c)
 
 	switch param.Device {
-	case doc.CCTV:
+	case _const.CCTV:
 		cctvs, _ := h.cctvRepo.Count()
 		total += cctvs
-	case doc.Fingerprint:
+	case _const.Fingerprint:
 		fps, _ := h.fpRepo.Count()
 		total += fps
-	case doc.KomputerPH1:
+	case _const.KomputerPH1:
 		kph1s, _ := h.kph1Repo.Count()
 		total += kph1s
-	case doc.KomputerPH2:
+	case _const.KomputerPH2:
 		kph2s, _ := h.kph2Repo.Count()
 		total += kph2s
-	case doc.Printer:
+	case _const.Printer:
 		printers, _ := h.printerRepo.Count()
 		total += printers
-	case doc.Telepon:
+	case _const.Telepon:
 		telepons, _ := h.teleponRepo.Count()
 		total += telepons
-	case doc.Toa:
+	case _const.Toa:
 		toas, _ := h.toaRepo.Count()
 		total += toas
-	case doc.Ups:
+	case _const.Ups:
 		upss, _ := h.upsRepo.Count()
 		total += upss
 	default:

@@ -33,10 +33,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-UPSICASE3100-001",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -45,10 +43,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-UPSICASE3100-002",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -57,10 +53,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA CT682B",
 		NoSeri:     "PH1-ICACT682B-003",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -69,10 +63,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-004",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -81,10 +73,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-UPSICASE3100-005",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -93,10 +83,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-UPSICASE3100-006",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -105,10 +93,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-012",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -117,10 +103,8 @@ var ups = []repo.UPS{
 		Tipe:       "KENIKA KS600",
 		NoSeri:     "PH1-KENIKAKS600-013",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -129,10 +113,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK PRO1200",
 		NoSeri:     "PH1-PROLINK1200-036",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -141,10 +123,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-UPSICASE3100-014",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -153,10 +133,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK PRO1201",
 		NoSeri:     "PH1-PROLINK1201-015",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -165,10 +143,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-UPSICASE3100-016",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -177,10 +153,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-017",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -189,10 +163,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-UPSICASE3100-018",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -201,10 +173,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-019",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -213,10 +183,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA CT1328B",
 		NoSeri:     "PH1-ICACT1328B-020",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -225,10 +193,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK PRO1200",
 		NoSeri:     "PH1-PROLINKPRO1200-021",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -237,10 +203,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-022",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -249,10 +213,8 @@ var ups = []repo.UPS{
 		Tipe:       "KENIKA KS1200",
 		NoSeri:     "PH1-KENIKAKS1200-023",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -261,10 +223,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-024",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -273,10 +233,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-025",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -285,10 +243,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-ICASE3100-026",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -297,10 +253,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH1-ICASE3100-027",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -309,10 +263,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA CT1082B",
 		NoSeri:     "PH1-ICACT1082B-028",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -321,10 +273,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 230SFC",
 		NoSeri:     "PH1-PROLINK230SFC-029",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -333,10 +283,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-030",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -345,10 +293,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA CT1082B",
 		NoSeri:     "PH1-ICACT1082B-031",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -357,10 +303,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-032",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -369,10 +313,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH1-PROLINK700SFC-033",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -381,10 +323,8 @@ var ups = []repo.UPS{
 		Tipe:       "KENIKA KS1200",
 		NoSeri:     "PH1-KENIKAKS1200-034",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -393,10 +333,8 @@ var ups = []repo.UPS{
 		Tipe:       "APC BVX700",
 		NoSeri:     "PH1-APCBVX700-035",
 		Lokasi:     "PH1",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -405,10 +343,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH2-UPSICASE3100-001",
 		Lokasi:     "PH2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -417,10 +353,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH2-UPSICASE3100-002",
 		Lokasi:     "PH2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -429,10 +363,8 @@ var ups = []repo.UPS{
 		Tipe:       "ICA SE3100",
 		NoSeri:     "PH2-UPSICASE3100-003",
 		Lokasi:     "PH2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -441,10 +373,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH2-PROLINK700SFC-004",
 		Lokasi:     "PH2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -453,10 +383,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH2-PROLINK700SFC-005",
 		Lokasi:     "PH2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -465,10 +393,8 @@ var ups = []repo.UPS{
 		Tipe:       "PROLINK 700SFC",
 		NoSeri:     "PH2-PROLINK700SFC-006",
 		Lokasi:     "PH2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 	{
 		ID:         bson.NewObjectID(),
@@ -477,9 +403,7 @@ var ups = []repo.UPS{
 		Tipe:       "APC SRT5K",
 		NoSeri:     "PH2-APCSRT5K-007",
 		Lokasi:     "PH2",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:   doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:  false,
 	},
 }

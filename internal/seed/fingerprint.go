@@ -31,7 +31,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "POLIKLINIK",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSREVOWF-206BNC-01",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -39,7 +39,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING A.B 1",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-02",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -47,7 +47,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING A.B 2",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-03",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -55,7 +55,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT E",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-04",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -63,7 +63,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING C.D.E",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANTT-05",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -71,7 +71,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING C",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSREVOWDV-240BNC-06",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -79,7 +79,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING D",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-07",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -87,7 +87,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PACKING A.B.C.D.E",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-08",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -95,7 +95,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG. KT. JAHIT E",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-09",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -103,7 +103,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "DESIGN BAWAH",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-10",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -111,7 +111,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "POS TENGAH (OFFICE)",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSREVOWDV-240BNC-11",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -119,7 +119,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "GUDANG JADI LUAR",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-12",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -127,7 +127,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "GUDANG KARTON",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSREVOWDV-240BNC-13",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -135,7 +135,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING. PACKING F",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-14",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -143,7 +143,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "KT. PLONG. JAHIT F1-F3",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-15",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -151,7 +151,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT F4-F7",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-16",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -159,7 +159,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT D",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-17",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -167,7 +167,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT B",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-18",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -175,7 +175,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT A",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-19",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -183,7 +183,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG. KT A",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-20",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -191,7 +191,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG. KT B",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-21",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -199,7 +199,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "SABLON ATAS. INSOLE",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-22",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -207,7 +207,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT. PLONG. D. E",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-23",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -215,7 +215,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG. JAHIT. D",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-24",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -223,7 +223,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG C",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-25",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -231,7 +231,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "KT C",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-26",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -239,7 +239,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "SABLON. PISAU",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-27",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -247,7 +247,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "G BAHAN. JK. BANGUNAN. BENGKEL. LEM",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-28",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -255,7 +255,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "OUTSOLE A.B. SPET",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-29",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -263,7 +263,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "OUTSOLE C. SESEP",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-30",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -271,7 +271,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG. KT. JAHIT H 1",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-31",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -279,7 +279,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG. KT. JAHIT H 2",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-32",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -287,7 +287,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "FOXING. LAMINATING. STRIMMING 1",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-33",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -295,7 +295,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "FOXING. LAMINATING. STRIMMING 2",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSMULTIMEDIA-34",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -303,7 +303,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING H",
 		Lokasi:    "PH1",
 		Kode:      "PH1-FSELEGANT-35",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -311,7 +311,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "OFFICE PH2",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-001",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -319,7 +319,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT A2 (A5-A8)",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-002",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -327,7 +327,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "DESIGN. JAHIT A1",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT REVOWDV-240BNC-003",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -335,7 +335,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG B.KT B.PRINTING. JAHIT C1 (C1-C4)",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-004",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -343,7 +343,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT B2 (B5-B8)",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-005",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -351,7 +351,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT C2 (C5-C8)",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-006",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -359,7 +359,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "KT C . PLONG C",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT MULTIMEDIA-007",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -367,7 +367,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG A. KT A",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-008",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -375,7 +375,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING A",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-009",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -383,7 +383,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT A1 (A1-A4). SAMPLES",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT REVOWDV-240BNC-010",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -391,7 +391,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING C",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-011",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -399,7 +399,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING B",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-012",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -407,7 +407,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT B1 (B1-B4)",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-013",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -415,7 +415,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "QA. PACKING. GD.BAHAN",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT ELEGANT-014",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -423,7 +423,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "FINGER FACE A",
 		Lokasi:    "PH2",
 		Kode:      "PH2-FINGERSPOT NEW HYBRIDPRO-015",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -431,7 +431,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "LASTING D",
 		Lokasi:    "PH3",
 		Kode:      "PH3-FINGERSPOT ELEGANT-016",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -439,7 +439,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT D2 (D5-D8).PLONG INSOLE. OUTSOLE",
 		Lokasi:    "PH3",
 		Kode:      "PH3-FINGERSPOT REVOWDV-240BNC-017",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -447,7 +447,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "PLONG D. KT D",
 		Lokasi:    "PH3",
 		Kode:      "PH3-FINGERSPOT ELEGANT-018",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -455,7 +455,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "JAHIT D1 (D1-D4). LAMINATING",
 		Lokasi:    "PH3",
 		Kode:      "PH3-FINGERSPOT ELEGANT-019",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -463,7 +463,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "OUTSOLE.INSOLE.PACKING 2",
 		Lokasi:    "PH3",
 		Kode:      "PH3-FINGERSPOT REVOWDV-240BNC-020",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 	{
@@ -471,7 +471,7 @@ var fps = []repo.FingerPrint{
 		Nama:      "FINGER FACE B",
 		Lokasi:    "PH3",
 		Kode:      "PH3-FINGERSPOT NEW HYBRIDPRO-021",
-		Inserted:  doc.ByAt{At: time.Now()},
+		Inserted:  doc.ByAt{At: time.Now(), ID: &SuperAdminID},
 		IsDeleted: false,
 	},
 }

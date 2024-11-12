@@ -9,6 +9,7 @@ import (
 	"sipamit-be/api/app/repo"
 	"sipamit-be/internal/config"
 	_db "sipamit-be/internal/db"
+	"sipamit-be/internal/pkg/const"
 	"sipamit-be/internal/pkg/doc"
 	"sipamit-be/internal/pkg/log"
 	"sipamit-be/internal/pkg/util"
@@ -34,11 +35,11 @@ func (u *UserClaims) IsSuperAdminOrAdmin() bool {
 }
 
 func (u *UserClaims) IsSuperAdmin() bool {
-	return u.Role == doc.SuperAdminRole
+	return u.Role == _const.SuperAdminRole
 }
 
 func (u *UserClaims) IsAdmin() bool {
-	return u.Role == doc.AdminRole
+	return u.Role == _const.AdminRole
 }
 
 func (u *UserClaims) ByAt() doc.ByAt {
@@ -64,7 +65,7 @@ type Context struct {
 func (c *Context) LoggedInUser() *repo.User {
 	if c.loggedInUser == nil {
 		onceUserRepo.Do(func() {
-			userRepo = repo.NewUserRepository(_db.Connect())
+			userRepo = repo.NewUserRepository(_db.Client)
 		})
 		u, err := userRepo.FindByID(c.Claims.IDAsObjectID)
 		if err != nil {

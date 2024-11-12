@@ -32,10 +32,8 @@ var printers = []repo.Printer{
 		Departemen:  "UMUM",
 		TipePrinter: "BROTHERDCP-T700-001",
 		NoSeri:      "PH1-BROTHERDCP-T700-001",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -43,10 +41,8 @@ var printers = []repo.Printer{
 		Departemen:  "EXIM",
 		TipePrinter: "BROTHERDCP-T420w-006",
 		NoSeri:      "PH1-BROTHERDCP-T420W-006",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -54,10 +50,8 @@ var printers = []repo.Printer{
 		Departemen:  "EXIM",
 		TipePrinter: "BROTHERDCP-T220-003",
 		NoSeri:      "PH1-BROTHERDCP-T220-003",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -65,10 +59,8 @@ var printers = []repo.Printer{
 		Departemen:  "EXIM",
 		TipePrinter: "BROTHERMFC-J3720-002",
 		NoSeri:      "PH1-BROTHERMFC-J3720-002",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -76,10 +68,8 @@ var printers = []repo.Printer{
 		Departemen:  "PPIC",
 		TipePrinter: "BROTHERDCP-T520W-030",
 		NoSeri:      "PH1-BROTHERDCP-T520W-030",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -87,10 +77,8 @@ var printers = []repo.Printer{
 		Departemen:  "HRD",
 		TipePrinter: "FARGODTC1500-022",
 		NoSeri:      "PH1-FARGODTC1500-022",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -98,10 +86,8 @@ var printers = []repo.Printer{
 		Departemen:  "HRD",
 		TipePrinter: "EPSONLX-310-023",
 		NoSeri:      "PH1-EPSONLX-310-023",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -109,10 +95,8 @@ var printers = []repo.Printer{
 		Departemen:  "HRD",
 		TipePrinter: "EPSONLX-300+II-027",
 		NoSeri:      "PH1-EPSONLX-300+II-027",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -120,10 +104,8 @@ var printers = []repo.Printer{
 		Departemen:  "HRD",
 		TipePrinter: "BROTHERDCP-T710W-021",
 		NoSeri:      "PH1-BROTHERDCP-T710W-021",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -131,10 +113,8 @@ var printers = []repo.Printer{
 		Departemen:  "HRD",
 		TipePrinter: "BROTHERDCP-T220-070",
 		NoSeri:      "PH1-BROTHERDCP-T220-070",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -142,10 +122,8 @@ var printers = []repo.Printer{
 		Departemen:  "QALAB",
 		TipePrinter: "BROTHERDCP-T710W-024",
 		NoSeri:      "PH1-BROTHERDCP-T710W-024",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -153,10 +131,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "BROTHERDCP-T420W-050",
 		NoSeri:      "PH1-BROTHERDCP-T420W-040",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -164,10 +140,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "BROTHERDCP-T710W-052",
 		NoSeri:      "PH1-BROTHERDCP-T710W-052",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -175,10 +149,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "CANON PIXMA IE G3770",
 		NoSeri:      "PH1-CANONPIXMAG3770-066",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -186,10 +158,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "CANONLBP6030-009",
 		NoSeri:      "PH1-CANONLBP6030-009",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -197,10 +167,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "EPSONLQ-2180-015",
 		NoSeri:      "PH1-EPSONLQ-2180-015",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -208,10 +176,8 @@ var printers = []repo.Printer{
 		Departemen:  "DC",
 		TipePrinter: "EPSON-L3210-051",
 		NoSeri:      "PH1-EPSON-L3210-041",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -219,10 +185,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "SATOCL4NXPLUS-056",
 		NoSeri:      "PH1-SATOCL4NXPLUS-056",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -230,10 +194,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "EPSONC6550A-012",
 		NoSeri:      "PH1-EPSONC6550A-012",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -241,10 +203,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "ZEBRAZT420-011",
 		NoSeri:      "PH1-ZEBRAZT420-011",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -252,10 +212,8 @@ var printers = []repo.Printer{
 		Departemen:  "DESIGN",
 		TipePrinter: "HPLASERJETP1102-016",
 		NoSeri:      "PH1-HPLASERJETP1102-016",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -263,10 +221,8 @@ var printers = []repo.Printer{
 		Departemen:  "DESIGN",
 		TipePrinter: "EPSON L121",
 		NoSeri:      "PH1-EPSONL121-068",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -274,10 +230,8 @@ var printers = []repo.Printer{
 		Departemen:  "DESIGN",
 		TipePrinter: "PRINTER ZEBRA ZT411NC",
 		NoSeri:      "PH2-ZEBRAZT411NC-013",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -285,10 +239,8 @@ var printers = []repo.Printer{
 		Departemen:  "K3",
 		TipePrinter: "EPSON L121-064",
 		NoSeri:      "PH1-EPSONL121-064",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -296,10 +248,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "EPSONLX-300+II-040",
 		NoSeri:      "PH1-EPSONLX-300+II-040",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -307,10 +257,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "HPLASERJETPRO-M404N-056",
 		NoSeri:      "PH1-HPLASERJETPRO-M404N-052",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -318,10 +266,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "EPSONLQ-2190-025",
 		NoSeri:      "PH1-EPSONLQ-2190-025",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -329,10 +275,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "CANONLBP6030-053",
 		NoSeri:      "PH1-CANONLBP6030-053",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -340,10 +284,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "EPSONLX-310-026",
 		NoSeri:      "PH1-EPSONLX-310-026",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -351,10 +293,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "EPSONLX-300+II-041",
 		NoSeri:      "PH1-EPSONLX-300+II-041",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -362,10 +302,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "HPLASERJETPRO-MP706N-028",
 		NoSeri:      "PH1-HPLASERJETPRO-MP706N-028",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -373,10 +311,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "EPSONLX-300+II-030",
 		NoSeri:      "PH1-EPSONLX-300+II-030",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -384,10 +320,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "EPSONLQ-2190-033",
 		NoSeri:      "PH1-EPSONLQ-2190-033",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -395,10 +329,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "HPLASERJETPRO-M4003DN-034",
 		NoSeri:      "PH1-HPLASERJETPRO-M4003DN-034",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -406,10 +338,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "HPLASERJETPRO-M404N-054",
 		NoSeri:      "PH1-HPLASERJETPRO-M404N-054",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -417,10 +347,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "BROTHERDCP-T720DW-055",
 		NoSeri:      "PH1-BROTHERDCP-T720DW-055",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -428,10 +356,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE PRODUKSI",
 		TipePrinter: "BROTHERDCP-T220",
 		NoSeri:      "PH1-BROTHERDCP-T220-000",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -439,10 +365,8 @@ var printers = []repo.Printer{
 		Departemen:  "QC\\INSPECT",
 		TipePrinter: "EPSON-L110-056",
 		NoSeri:      "PH1-EPSON-L110-056",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -450,10 +374,8 @@ var printers = []repo.Printer{
 		Departemen:  "BORDIR",
 		TipePrinter: "EPSON-L110-049",
 		NoSeri:      "PH1-EPSON-L110-049",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -461,10 +383,8 @@ var printers = []repo.Printer{
 		Departemen:  "GUDANG BAHAN",
 		TipePrinter: "BROTHERDCP-T220-030",
 		NoSeri:      "PH1-BROTHERDCP-T220-030",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -472,10 +392,8 @@ var printers = []repo.Printer{
 		Departemen:  "GUDANG BAHAN",
 		TipePrinter: "CANONLBP6030-060",
 		NoSeri:      "PH1-CANONLBP6030-060",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -483,10 +401,8 @@ var printers = []repo.Printer{
 		Departemen:  "SABLON ATAS",
 		TipePrinter: "CANONLBP6030-057",
 		NoSeri:      "PH1-CANONLBP6030-057",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -494,10 +410,8 @@ var printers = []repo.Printer{
 		Departemen:  "SABLON ATAS",
 		TipePrinter: "BROTHERDCP-T220-058",
 		NoSeri:      "PH1-BROTHERDCP-T220-058",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -505,10 +419,8 @@ var printers = []repo.Printer{
 		Departemen:  "GUDANG SOLE",
 		TipePrinter: "BROTHERDCP-T520W-059",
 		NoSeri:      "PH1-BROTHERDCP-T520W-059",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -516,10 +428,8 @@ var printers = []repo.Printer{
 		Departemen:  "FOXING",
 		TipePrinter: "CANON PIXMA IE G3770",
 		NoSeri:      "PH1-CANONPIXMAG3770-065",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -527,10 +437,8 @@ var printers = []repo.Printer{
 		Departemen:  "FOXING WARNA",
 		TipePrinter: "CANON MG2470",
 		NoSeri:      "PH1-CANON-MG2470-069",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -538,10 +446,8 @@ var printers = []repo.Printer{
 		Departemen:  "PACKING LINE A",
 		TipePrinter: "ZEBRA ZT-410",
 		NoSeri:      "PH1-ZEBRA-ZT410-006",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -549,10 +455,8 @@ var printers = []repo.Printer{
 		Departemen:  "PACKING LINE B",
 		TipePrinter: "AVERY DENNISON",
 		NoSeri:      "PH1-AVERY DENNISON-042",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -560,10 +464,8 @@ var printers = []repo.Printer{
 		Departemen:  "PACKING LINE F",
 		TipePrinter: "ZEBRA ZT-230",
 		NoSeri:      "PH1-ZEBRA-ZT230-007",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -571,10 +473,8 @@ var printers = []repo.Printer{
 		Departemen:  "PACKING LINE H",
 		TipePrinter: "AVERY DENNISON",
 		NoSeri:      "PH1-AVERY DENNISON-043",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -582,10 +482,8 @@ var printers = []repo.Printer{
 		Departemen:  "DESIGN",
 		TipePrinter: "CANON PIXMA IE G3770",
 		NoSeri:      "PH1-CANONPIXMAG3770-067",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -593,10 +491,8 @@ var printers = []repo.Printer{
 		Departemen:  "QALAB",
 		TipePrinter: "EPSON L121",
 		NoSeri:      "PH1-EPSON L121-068",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -604,10 +500,8 @@ var printers = []repo.Printer{
 		Departemen:  "QALAB",
 		TipePrinter: "BROTHERDCP-T700W-004",
 		NoSeri:      "PH1-BROTHERDCP-T700W-004",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -615,10 +509,8 @@ var printers = []repo.Printer{
 		Departemen:  "HANGGAR BC",
 		TipePrinter: "BROTHERDCP-T700W-000",
 		NoSeri:      "PH1-BROTHERDCP-T700W-004",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -626,10 +518,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE",
 		TipePrinter: "PRINTER BROTHER DCP-T720W",
 		NoSeri:      "PH2-BROTHER-T720W-010",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -637,10 +527,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE",
 		TipePrinter: "PRINTER CANON MF643CDW",
 		NoSeri:      "PH2-CANONMF643CDW-019",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -648,10 +536,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "PRINTER LX310 II",
 		NoSeri:      "PH2-EPSONLX310ii-011",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -659,10 +545,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE",
 		TipePrinter: "PRINTER SATO CL4NXPLUS",
 		NoSeri:      "PH2-SATOCL4NXPLUS-012",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -670,10 +554,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE",
 		TipePrinter: "PRINTER EPSON L121",
 		NoSeri:      "PH2-EPSONL121-027",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -681,10 +563,8 @@ var printers = []repo.Printer{
 		Departemen:  "PEMBELIAN",
 		TipePrinter: "PRINTER BROTHER DCP-T720W",
 		NoSeri:      "PH2-BROTHER-T720W-020",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -692,10 +572,8 @@ var printers = []repo.Printer{
 		Departemen:  "HRD",
 		TipePrinter: "PRINTER BROTHER DCP-T220",
 		NoSeri:      "PH2-BROTHERT220-015",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -703,10 +581,8 @@ var printers = []repo.Printer{
 		Departemen:  "EXIM",
 		TipePrinter: "PRINTER BROTHER MFCT4500DW",
 		NoSeri:      "PH2-BROTHER MFCT4500DW-018",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -714,10 +590,8 @@ var printers = []repo.Printer{
 		Departemen:  "EXIM",
 		TipePrinter: "PRINTER CANON LBP6030",
 		NoSeri:      "PH2-CANONLBP6030-023",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -725,10 +599,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE",
 		TipePrinter: "PRINTER SATO CL4NXPLUS",
 		NoSeri:      "PH2-SATOCL4NXPLUS-020",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -736,10 +608,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE",
 		TipePrinter: "PRINTER ZEBRA ZT420",
 		NoSeri:      "PH2-ZEBRA-ZT420-021",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -747,10 +617,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE",
 		TipePrinter: "PRINTER ZEBRA ZT420",
 		NoSeri:      "PH2-ZEBRA-ZT420-022",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -758,10 +626,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE / LABEL",
 		TipePrinter: "PRINTER ZEBRA ZM600",
 		NoSeri:      "PH2-ZEBRA-ZM600-006",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -769,10 +635,8 @@ var printers = []repo.Printer{
 		Departemen:  "QA LAB",
 		TipePrinter: "PRINTER BROTHER DCP-T310",
 		NoSeri:      "PH2-BROTHERDCP-T310-008",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -780,10 +644,8 @@ var printers = []repo.Printer{
 		Departemen:  "DESIGN",
 		TipePrinter: "PRINTER HP LASERJET 107A",
 		NoSeri:      "PH2-HPLASER107A-017",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -791,10 +653,8 @@ var printers = []repo.Printer{
 		Departemen:  "DESIGN",
 		TipePrinter: "PRINTER BROTHER DCP-T420W",
 		NoSeri:      "PH2-BROTHER-T420W-014",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -802,10 +662,8 @@ var printers = []repo.Printer{
 		Departemen:  "DESIGN",
 		TipePrinter: "PRINTER BROTHER DCP-T720DW",
 		NoSeri:      "PH2-BROTHER-T720DW-026",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -813,10 +671,8 @@ var printers = []repo.Printer{
 		Departemen:  "PACKING A",
 		TipePrinter: "PRINTER ZEBRA ZT410",
 		NoSeri:      "PH2-ZEBRA-ZT410-007",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -824,10 +680,8 @@ var printers = []repo.Printer{
 		Departemen:  "OUTSOLE",
 		TipePrinter: "PRINTER EPSON L121",
 		NoSeri:      "PH2-EPSONL121-016",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -835,10 +689,8 @@ var printers = []repo.Printer{
 		Departemen:  "GUDANG BAHAN",
 		TipePrinter: "PRINTER BROTHER DCP-T310",
 		NoSeri:      "PH3-BROTHERDCP-T310-004",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -846,10 +698,8 @@ var printers = []repo.Printer{
 		Departemen:  "ACCOUNTING",
 		TipePrinter: "PRINTER CANON LBP6030",
 		NoSeri:      "PH3-CANONLBP6030-024",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -857,10 +707,8 @@ var printers = []repo.Printer{
 		Departemen:  "OFFICE PH3",
 		TipePrinter: "PRINTER BROTHER DCP-T720DW",
 		NoSeri:      "PH3-BROTHER-T720DW-025",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 	{
 		ID:          bson.NewObjectID(),
@@ -868,9 +716,7 @@ var printers = []repo.Printer{
 		Departemen:  "BEA CUKAI",
 		TipePrinter: "PRINTER BROTHER DCP-T710W",
 		NoSeri:      "PH2-BROTHERDCP-T710W-005",
-		Inserted: doc.ByAt{
-			At: time.Now(),
-		},
-		IsDeleted: false,
+		Inserted:    doc.ByAt{At: time.Now(), ID: &SuperAdminID},
+		IsDeleted:   false,
 	},
 }

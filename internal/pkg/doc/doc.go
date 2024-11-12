@@ -1,9 +1,12 @@
 package doc
 
 import (
+	"encoding/json"
 	"github.com/labstack/echo/v4"
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"net/http"
+	"sipamit-be/api/app/repo"
+	_db "sipamit-be/internal/db"
 	"sipamit-be/internal/pkg/log"
 	"time"
 )
@@ -11,6 +14,28 @@ import (
 type ByAt struct {
 	ID *bson.ObjectID `json:"_id,omitempty" bson:"_id,omitempty"`
 	At time.Time      `json:"at" bson:"at"`
+}
+
+func (u *ByAt) MarshalJSON() ([]byte, error) {
+	type Alias ByAt
+	var fullName string
+
+	if u.ID != nil {
+		userRepo := repo.NewUserRepository(_db.Client)
+
+		user, err := userRepo.FindByID(*u.ID)
+		if err == nil {
+			fullName = user.FullName
+		}
+	}
+
+	return json.Marshal(&struct {
+		*Alias
+		FullName string `json:"full_name" bson:"full_name"`
+	}{
+		Alias:    (*Alias)(u),
+		FullName: fullName,
+	})
 }
 
 type CPDetail struct {

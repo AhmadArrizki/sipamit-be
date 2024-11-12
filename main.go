@@ -31,8 +31,6 @@ func main() {
 	e := echo.New()
 	log.SetLogger(e)
 
-	db := _db.Connect()
-
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
 		AllowOrigins:     strings.Split(config.App.CORSAllowOrigins, ","),
 		AllowCredentials: true,
@@ -74,7 +72,7 @@ func main() {
 	docs.SwaggerInfo.Version = version.Version
 	docs.SwaggerInfo.Host = config.App.SwaggerHost
 
-	api.NewInitHandler(e, db)
+	api.NewInitHandler(e, _db.Client)
 
 	log.Fatal(e.Start(fmt.Sprintf(`%v:%v`, config.App.Host, config.App.Port)))
 }

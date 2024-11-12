@@ -1,4 +1,4 @@
-package doc
+package _const
 
 const (
 	AdminRole      = "admin"

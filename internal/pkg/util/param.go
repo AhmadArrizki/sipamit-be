@@ -5,7 +5,7 @@ import (
 	"go.mongodb.org/mongo-driver/v2/bson"
 	"go.mongodb.org/mongo-driver/v2/mongo/options"
 	"math"
-	"sipamit-be/internal/pkg/doc"
+	"sipamit-be/internal/pkg/const"
 	"strconv"
 	"strings"
 )
@@ -26,7 +26,7 @@ func NewCommonQuery(c echo.Context) *CommonQuery {
 	limit := strings.ToLower(strings.TrimSpace(c.QueryParam("limit")))
 	sort := strings.ToLower(strings.TrimSpace(c.QueryParam("sort")))
 
-	if !doc.ValidDevice(device) {
+	if !_const.ValidDevice(device) {
 		device = ""
 	}
 
