@@ -91,7 +91,6 @@ func (h *UserHandler) create(c echo.Context) error {
 			log.Errorf("Failed to find user by username: %v", err)
 			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
 		}
-		return echo.NewHTTPError(http.StatusBadRequest, "Username already exists")
 	}
 
 	user := &repo.User{
