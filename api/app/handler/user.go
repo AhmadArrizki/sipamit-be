@@ -85,12 +85,16 @@ func (h *UserHandler) create(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusBadRequest, "Password is required")
 	}
 
-	_, err = h.userRepo.FindByUsername(f.Username)
+	usr, err := h.userRepo.FindByUsername(f.Username)
 	if err != nil {
 		if !errors.Is(err, mongo.ErrNoDocuments) {
 			log.Errorf("Failed to find user by username: %v", err)
 			return echo.NewHTTPError(http.StatusInternalServerError, "Internal server error")
 		}
+	}
+
+	if usr != nil {
+		return echo.NewHTTPError(http.StatusBadRequest, "Username already exists")
 	}
 
 	user := &repo.User{
